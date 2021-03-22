@@ -1,0 +1,11 @@
+.presentation{
+    height: 100vh;
+    background-color: #1F1F1F;
+}
+
+.presentation-trait{
+    width: 10px;
+    background: linear-gradient(#D05F5E, #EC6D53);
+    margin-left: 50px;
+    transition: 1s;
+}
