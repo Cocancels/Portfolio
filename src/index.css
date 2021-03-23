@@ -3,3 +3,10 @@
   margin: 0;
   font-family: 'Abel Pro';
 }
+
+
+@media  (max-width: 640px){
+  body{
+    overflow: scroll
+  }
+}

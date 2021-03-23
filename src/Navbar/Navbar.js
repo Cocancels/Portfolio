@@ -1,5 +1,13 @@
 import React, { useState } from "react";
 import "./Navbar.css";
+import {
+  Link,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+  scroller,
+} from "react-scroll";
 
 export function Navbar() {
   const [navDisplay, setNavDisplay] = useState({
@@ -45,9 +53,29 @@ export function Navbar() {
         src="./logos/logo_big_border_red.png"
         alt="logo"
       />
-      <ul style={navDisplay}>
-        <li>Accueil</li>
-        <li>Projets</li>
+      <ul className="navLinks" style={navDisplay}>
+        <li>
+          <Link
+            activeClass="active"
+            className="navlink navHome"
+            to="header-presentation"
+            smooth={true}
+            duration={1000}
+          >
+            Accueil
+          </Link>
+        </li>
+        <li>
+          <Link
+            activeClass="active"
+            className="navlink navMain"
+            to="main"
+            smooth={true}
+            duration={1000}
+          >
+            A propos
+          </Link>
+        </li>
         <li>Contact</li>
       </ul>
     </nav>

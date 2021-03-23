@@ -18,7 +18,6 @@
     height: 75px;
     margin-left: 100px;
     transition: 0.5s;
-
 }
 
 #navbar>ul{
@@ -29,5 +28,9 @@
     font-size: 30px;
     transition: 0.5s;
 
+}
+
+.navLinks>li:hover{
+    cursor: pointer;
 }
 

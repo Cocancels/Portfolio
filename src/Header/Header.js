@@ -1,6 +1,6 @@
 import { Navbar } from "../Navbar/Navbar";
 import "./Header.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   Link,
   Element,
@@ -21,38 +21,46 @@ export function Header() {
   const [icon1Display, setIcon1Display] = useState({
     display: "none",
     opacity: "0",
-    transform: "translateY(-50px)",
+    transform: "translateY(50px)",
   });
   const [icon2Display, setIcon2Display] = useState({
     display: "none",
     opacity: "0",
-    transform: "translateY(-50px)",
+    transform: "translateY(50px)",
   });
   const [icon3Display, setIcon3Display] = useState({
     display: "none",
     opacity: "0",
-    transform: "translateY(-50px)",
+    transform: "translateY(50px)",
   });
   const [icon4Display, setIcon4Display] = useState({
     display: "none",
     opacity: "0",
-    transform: "translateY(-50px)",
+    transform: "translateY(50px)",
   });
   const [pictureDisplay, setPictureDisplay] = useState({
     display: "none",
     opacity: "0",
-    transform: "translateY(50px)",
+    transform: "translateY(-50px)",
   });
   const [buttonDisplay, setButtonDisplay] = useState({
     display: "none",
     opacity: "0",
     transform: "translateY(50px)",
   });
+ 
+
+
+
 
   let i = 0;
   let j = 0;
   let fullTitle = "Corentin Ancel";
   let fullSubTitle = "Développeur FullStack";
+
+  window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  };
 
   useEffect(() => {
     setLeftTraitHeight({ height: "400px" });
@@ -90,7 +98,7 @@ export function Header() {
     setIcon1Display({
       display: "block",
       opacity: "0",
-      transform: "translateY(-50px)",
+      transform: "translateY(50px)",
     });
 
     setTimeout(() => {
@@ -104,7 +112,7 @@ export function Header() {
     setIcon2Display({
       display: "block",
       opacity: "0",
-      transform: "translateY(-50px)",
+      transform: "translateY(50px)",
     });
 
     setTimeout(() => {
@@ -118,7 +126,7 @@ export function Header() {
     setIcon3Display({
       display: "block",
       opacity: "0",
-      transform: "translateY(-50px)",
+      transform: "translateY(50px)",
     });
 
     setTimeout(() => {
@@ -132,7 +140,7 @@ export function Header() {
     setIcon4Display({
       display: "block",
       opacity: "0",
-      transform: "translateY(-50px)",
+      transform: "translateY(50px)",
     });
 
     setTimeout(() => {
@@ -149,7 +157,7 @@ export function Header() {
     setPictureDisplay({
       display: "flex",
       opacity: "0",
-      transform: "translateY(50px)",
+      transform: "translateY(-50px)",
     });
 
     setButtonDisplay({
@@ -179,42 +187,42 @@ export function Header() {
       <div className="header-presentation">
         <div id="flex-container">
           <div style={leftTraitHeight} className="left-trait"></div>
-          <div id="presentation-content">
-            <div id="presentation-text">
-              <h1 id="presentation-title">
+          <div id="intro-content">
+            <div id="intro-text">
+              <h1 id="intro-title">
                 {title}
                 {titleCaret}
               </h1>
-              <h2 id="presentation-subtitle">
+              <h2 id="intro-subtitle">
                 {subTitle}
                 {subTitleCaret}
               </h2>
             </div>
-            <div id="presentation-logos">
+            <div id="intro-logos">
               <img
                 style={icon1Display}
-                src="./logos/logo_big_border_red.png"
+                src="./logos/logo_github.svg"
                 alt="logo"
-                className="logo"
+                className="logo github"
               />
               <img
                 style={icon2Display}
-                src="./logos/logo_big_border_red.png"
+                src="./logos/logo_linkedin.svg"
                 alt="logo"
-                className="logo"
+                className="logo linkedin"
               />
               <img
                 style={icon3Display}
-                src="./logos/logo_big_border_red.png"
+                src="./logos/logo_gmail.svg"
                 alt="logo"
-                className="logo"
+                className="logo gmail"
               />
-              <img
+              <button
                 style={icon4Display}
-                src="./logos/logo_big_border_red.png"
-                alt="logo"
-                className="logo"
-              />
+                className="logo cv"
+              >              
+                CV                       
+              </button>
             </div>
           </div>
         </div>

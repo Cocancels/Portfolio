@@ -3,9 +3,89 @@
     background-color: #1F1F1F;
 }
 
+#presentation-container{
+    display: flex;
+    padding-top: 200px;
+}
+
+#presentation-content{
+    max-width: 80%;
+    margin-left: 50px;
+}
+
+#presentation-content>h1{
+    font-size: 72px;
+  background: -webkit-linear-gradient(50deg, #D05F5E, #EC6D53);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#presentation-content>p{
+    margin-top: 50px;
+    font-size: 30px;
+    color: white;  
+}
+
 .presentation-trait{
     width: 10px;
     background: linear-gradient(#D05F5E, #EC6D53);
     margin-left: 50px;
     transition: 1s;
+}
+
+#buttons-container{
+    display: flex;
+    justify-content: space-around;
+    transition: 1s;
+    margin-top: 150px;
+}
+
+#button-see-project{
+    max-width: 400px;
+    color: white;
+    border: solid 5px;
+    border-image: linear-gradient(#D05F5E, #EC6D53) 27;
+    padding: 10px;
+    background-color: #0C0C0C;
+}
+
+#button-see-project>h3{
+    color: #EC6D53;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 25px;
+    
+}
+
+
+.button-content{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-content>p{
+    color: white;
+    font-size: 20px;
+    max-width: 80%;
+}
+
+.button-content>button{
+    background-color: #0C0C0C;
+    border: none;
+}
+
+.button-content>button:hover{
+    cursor: pointer;
+}
+
+#arrow-right{
+    color: #EC6D53;
+    height: 40px;
+    width: 40px;
+}
+
+.button-content>button:focus{
+    outline: 0;
+
 }
