@@ -217,11 +217,8 @@ export function Header() {
                 alt="logo"
                 className="logo gmail"
               />
-              <button
-                style={icon4Display}
-                className="logo cv"
-              >              
-                CV                       
+              <button style={icon4Display} className="logo cv">
+                CV
               </button>
             </div>
           </div>
@@ -236,8 +233,8 @@ export function Header() {
         <button>
           <Link
             activeClass="active"
-            className="main"
-            to="main"
+            className="presentation"
+            to="presentation"
             spy={true}
             smooth={true}
             duration={1000}

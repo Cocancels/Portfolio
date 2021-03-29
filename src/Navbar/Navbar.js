@@ -68,8 +68,8 @@ export function Navbar() {
         <li>
           <Link
             activeClass="active"
-            className="navlink navMain"
-            to="main"
+            className="navlink navPresentation"
+            to="presentation"
             smooth={true}
             duration={1000}
           >

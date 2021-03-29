@@ -1,0 +1,17 @@
+[
+  {
+    "image": "./profile_picture.jpg",
+    "name": "Dev'corp",
+    "description": "Projet réalisé dans le cadre du projet de fin d'année à l'IIM.",
+    "languages": [],
+
+    "link": "d"
+  },
+
+  {
+    "name": "a",
+    "description": "b",
+    "languages": "c",
+    "link": "d"
+  }
+]

@@ -9,6 +9,7 @@
 }
 
 #presentation-content{
+    transition: 1s;
     max-width: 80%;
     margin-left: 50px;
 }

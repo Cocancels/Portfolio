@@ -1,0 +1,50 @@
+.projets{
+    height: 100vh;
+    background-color: #262626;
+
+}
+
+.allProjets{
+    margin-top: 200px;
+    color: white;
+    display: flex;
+    justify-content: space-around
+    ;
+}
+
+.projet-container{
+    background: #1F1F1F;
+    border-radius: 20px;
+}
+
+
+.projet-container>img{
+    width: 400px;
+
+    object-fit: cover;
+}
+
+.projet-content{
+    padding: 15px;
+    
+}
+
+.projet-name{
+    margin-top: 30px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+    color: white;
+    text-transform: uppercase;
+}
+
+.projet-description{
+    margin: auto;
+    margin-top: 30px;
+    font-size: 20px;
+    max-width: 360px;
+}
+
+.projet-languages{
+    margin-top: 20px;
+}
