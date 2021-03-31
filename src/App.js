@@ -2,6 +2,8 @@ import "./App.css";
 import { Header } from "./Header/Header";
 import { Presentation } from "./Presentation/Presentation";
 import { Projets } from "./Projets/Projets";
+import { Competences } from "./Competences/Competences";
+
 
 function App() {
   return (
@@ -9,6 +11,7 @@ function App() {
       <Header />
       <Presentation />
       <Projets />
+      {/* <Competences /> */}
     </div>
   );
 }

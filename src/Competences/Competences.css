@@ -1,0 +1,54 @@
+#competences{
+    height: 100vh;
+    background-color: #1F1F1F;
+}
+
+.competences-container{
+    display: flex;
+    padding-top: 200px;
+}
+
+.competences-container h1{
+    margin-left: 50px;
+    font-size: 72px;
+    background: -webkit-linear-gradient(50deg, #D05F5E, #EC6D53);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.competences-list{
+    margin-left: 50px;
+}
+
+.left-trait-competences{
+    width: 10px;
+    background: linear-gradient(#D05F5E, #EC6D53);
+    margin-left: 50px;
+    transition: 1s;
+    height: 700px;
+}
+
+.competences-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.competence-content{
+    margin-right: 200px;
+    margin-bottom: 75px;
+    text-align: center;
+}
+
+.competence-content p{
+    color: white;
+    font-size: 30px;
+}
+
+.competence-content img{
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+

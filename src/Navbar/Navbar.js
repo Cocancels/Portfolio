@@ -76,7 +76,18 @@ export function Navbar() {
             A propos
           </Link>
         </li>
-        <li>Contact</li>
+        <li>
+          {" "}
+          <Link
+            activeClass="active"
+            className="navlink navProjets"
+            to="projets"
+            smooth={true}
+            duration={1000}
+          >
+            Projets
+          </Link>
+        </li>
       </ul>
     </nav>
   );

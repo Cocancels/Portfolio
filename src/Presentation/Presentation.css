@@ -32,6 +32,8 @@
     background: linear-gradient(#D05F5E, #EC6D53);
     margin-left: 50px;
     transition: 1s;
+    height: 450px ;
+
 }
 
 #buttons-container{
@@ -90,3 +92,63 @@
     outline: 0;
 
 }
+
+@media  (max-width: 640px){
+    #presentation-container{
+        padding-top: 100px;
+    }
+
+    #presentation-content{
+        max-width: auto;
+        margin-left: 0px;
+    }
+
+    .presentation-trait{
+        width: 5px;
+        margin-left: 10px;
+        margin-right: 30px;
+        height: 350px  !important;
+
+    }
+
+    #presentation-content>h1{
+        font-size: 50px;
+    }
+
+    #presentation-content>p{
+        margin-top: 50px;
+        font-size: 20px;
+        color: white;  
+    }
+
+    #buttons-container{
+        display: none;
+        margin: auto;
+        justify-content: space-around;
+        transition: 1s;
+        margin-top: 75px;
+    }
+
+    #button-see-project{
+        margin-top: 30px;
+        width: 30%;
+    }
+
+    #button-see-project>h3{
+        font-size: 17px;
+    }
+
+    .button-content{
+        flex-direction: column;
+    }
+
+    .button-content>p{
+        font-size: 13px;
+        max-width: none;
+    }
+
+    #arrow-right{
+        height: 30px;
+        width: 30px;
+    }
+  }

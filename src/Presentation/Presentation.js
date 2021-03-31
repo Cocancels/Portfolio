@@ -105,22 +105,21 @@ export function Presentation() {
           className="presentation-trait"
           ref={ref}
         ></div>
-        <div id="presentation-content" style={ presentationContent }>
-          <h1>
-            About me
-          </h1>
+        <div id="presentation-content" style={presentationContent}>
+          <h1>A propos</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.;
+            Bonjour ! Moi c'est Corentin, j'ai 19 ans et je suis actuellement à l'institut de l'Internet
+            et du Multimédia, en développement web. Je suis passionné par le développement depuis plusieurs années maintenant,
+            plus particulièrement au niveau Back-End, par exemple les frameworks Laravel et Symfony.
           </p>
         </div>
       </div>
       <div id="buttons-container" style={buttonsDisplay}>
         <div id="button-see-project">
-          <h3>Mes projets</h3>
+          <h3>Projets</h3>
           <div className="button-content">
             <p>
-              En cliquant sur le bouton ci-contre, vous aurez accès à mes
-              différents projets
+              Découvrez mes différents projets
             </p>
             <button>
               {" "}
@@ -139,9 +138,9 @@ export function Presentation() {
         </div>
 
         <div id="button-see-project">
-          <h3>Mes compétences</h3>
+          <h3>Compétences</h3>
           <div className="button-content">
-            <p>Découvrez mon niveau dans les technologies liées au web</p>
+            <p>Découvrez mes compétences</p>
             <button>
               {" "}
               <Link

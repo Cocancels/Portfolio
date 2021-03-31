@@ -2,12 +2,19 @@
   padding: 0;
   margin: 0;
   font-family: 'Abel Pro';
+}
+
+body{
   overflow: hidden;
+
 }
 
 
 @media  (max-width: 640px){
-  body{
-    overflow: scroll
-  }
+
+body{
+  overflow: visible;
+
+}
+
 }
