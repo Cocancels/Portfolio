@@ -12,6 +12,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowCircleDown } from "@fortawesome/free-solid-svg-icons";
 
+
 export function Header() {
   const [leftTraitHeight, setLeftTraitHeight] = useState({ height: "0px" });
   const [title, setTitle] = useState("");
@@ -48,15 +49,11 @@ export function Header() {
     opacity: "0",
     transform: "translateY(50px)",
   });
- 
-
-
-
 
   let i = 0;
   let j = 0;
   let fullTitle = "Corentin Ancel";
-  let fullSubTitle = "Développeur FullStack";
+  let fullSubTitle = "Développeur Web";
 
   window.onbeforeunload = function () {
     window.scrollTo(0, 0);

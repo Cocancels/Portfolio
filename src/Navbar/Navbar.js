@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./Navbar.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import {
   Link,
   Element,
@@ -19,13 +21,21 @@ export function Navbar() {
     height: "20px",
   });
 
+  const [burgerDisplay, setBurgerDisplay] = useState({
+    display: "block",
+    opacity: "1"
+  })
+
   function showNav() {
     if (navDisplay.display != "flex" && navDisplay.opacity != "1") {
       setNavHeight({ height: "80px" });
       setNavDisplay({ display: "flex", opacity: "0" });
-
+      setBurgerDisplay({ display: "block", opacity: "0" })
+ 
       setTimeout(() => {
         setNavDisplay({ display: "flex", opacity: "1" });
+        setBurgerDisplay({ display: "none", opacity: "0" })
+
       }, 100);
     }
   }
@@ -34,9 +44,14 @@ export function Navbar() {
     if (navDisplay.display != "none" && navDisplay.opacity != "0") {
       setNavHeight({ height: "20px" });
       setNavDisplay({ display: "flex", opacity: "0" });
+
       setTimeout(() => {
         setNavDisplay({ display: "none", opacity: "0" });
-      }, 300);
+        setBurgerDisplay({ display: "block", opacity: "0" })
+        setTimeout(() => {
+          setBurgerDisplay({ display: "block", opacity: "1" })
+        }, 100)
+      }, 200);
     }
   }
 
@@ -47,6 +62,10 @@ export function Navbar() {
       onMouseLeave={hideNav}
       id="navbar"
     >
+
+  <FontAwesomeIcon style={burgerDisplay} id="burger-icon" icon={faBars} />
+      
+
       <img
         timer={1000}
         style={navDisplay}
@@ -86,6 +105,18 @@ export function Navbar() {
             duration={1000}
           >
             Projets
+          </Link>
+        </li>
+        <li>
+          {" "}
+          <Link
+            activeClass="active"
+            className="navlink navCompetences"
+            to="competences"
+            smooth={true}
+            duration={1000}
+          >
+            Compétences
           </Link>
         </li>
       </ul>

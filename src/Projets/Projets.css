@@ -1,24 +1,32 @@
 .projets{
-    background-color: #262626;
+    display: flex;
     height: 100vh;
+    background-image: radial-gradient(circle at 99% 33%, hsla(235,0%,48%,0.03) 0%, hsla(235,0%,48%,0.03) 37%,transparent 37%, transparent 100%),radial-gradient(circle at 46% 16%, hsla(235,0%,48%,0.03) 0%, hsla(235,0%,48%,0.03) 43%,transparent 43%, transparent 100%),radial-gradient(circle at 99% 25%, hsla(235,0%,48%,0.03) 0%, hsla(235,0%,48%,0.03) 22%,transparent 22%, transparent 100%),radial-gradient(circle at 57% 88%, hsla(235,0%,48%,0.03) 0%, hsla(235,0%,48%,0.03) 86%,transparent 86%, transparent 100%),radial-gradient(circle at 82% 78%, hsla(235,0%,48%,0.03) 0%, hsla(235,0%,48%,0.03) 22%,transparent 22%, transparent 100%),linear-gradient(90deg, rgb(0,0,0),rgb(0,0,0));background-image: radial-gradient(circle at 99% 33%, hsla(235,0%,48%,0.03) 0%, hsla(235,0%,48%,0.03) 37%,transparent 37%, transparent 100%),radial-gradient(circle at 46% 16%, hsla(235,0%,48%,0.03) 0%, hsla(235,0%,48%,0.03) 43%,transparent 43%, transparent 100%),radial-gradient(circle at 99% 25%, hsla(235,0%,48%,0.03) 0%, hsla(235,0%,48%,0.03) 22%,transparent 22%, transparent 100%),radial-gradient(circle at 57% 88%, hsla(235,0%,48%,0.03) 0%, hsla(235,0%,48%,0.03) 86%,transparent 86%, transparent 100%),radial-gradient(circle at 82% 78%, hsla(235,0%,48%,0.03) 0%, hsla(235,0%,48%,0.03) 22%,transparent 22%, transparent 100%),linear-gradient(90deg, rgb(0,0,0),rgb(0,0,0));
 }
 
-.projets-container>h1{
-
-    text-transform: uppercase;
-    text-align: center;
+.section-projets-container>h1{
+    text-align: left;
     padding-top: 150px;
-    color: white;
-    font-size: 50px;
+    background: -webkit-linear-gradient(50deg, #D05F5E, #EC6D53);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 72px;
+}
+
+.trait-left-projets{
+    z-index: 1;
+    width: 10px;
+    height: 70%;
+    background-color: #EC6D53;
+    margin-left: 50px;
+    margin-top: 150px;
+    margin-right: 50px;
+    transition: 1s;
 }
 
 .allProjets{
-    margin-top: 150px;
-    margin-right: 100px;
-    margin-left: 100px;
+    margin-top: 100px;
     color: white;
-    justify-content: space-around;
-
 }
 
 #arrow-right-projet{
@@ -32,12 +40,10 @@
 }
 
 .projet-container{
-    margin: auto;
     background: #0C0C0C;
     display: flex;
-    width: 60%;
+    width: 1000px;
 }
-
 
 .projet-image{
     width: 500px;
@@ -141,20 +147,34 @@
     transition: 0.5s;
 }
 
-#changeProjetMinus:hover,#changeProjetPlus:hover{
+#changeProjetMinus:hover,#changeProjetPlus:hover, .buttonProject:hover{
     cursor: pointer;
     color: #EC6D53;
 }
 
 @media  (max-width: 640px){
+    .projets{
+        width: 100vw;
+        overflow-x: hidden;
+    }
+
+    .trait-left-projets{
+        width: 5px;
+        margin-left: 10px;
+        margin-right: 0px;
+        margin-top: 100px;
+    }
+
     .projet-image{
         width: auto;
         height: 150px;
     }
 
+
     .projet-container{
         flex-direction: column;
-        width: auto;
+        width: 325px;
+        margin: auto;
         height: 400px;
     }
 
@@ -169,17 +189,15 @@
     }
 
     .allProjets{
-        margin-left: 5%;
-        margin-right: 5%;
         margin-top: 50px;
-    }
+   }
 
     .projet-name{
-        font-size: 15px;
+        font-size: 18px;
     }
 
     .projet-description{
-        font-size: 13px;
+        font-size: 15px;
     }
 
     #flex-container-projet{
@@ -188,5 +206,19 @@
 
     .projet-languages{
         margin-top: 0;
+    }
+
+    .language-logo{
+        height: 40px;
+    }
+
+    .section-projets-container{
+        width: 100%;
+    }
+
+    .section-projets-container>h1{
+        font-size: 50px;
+        padding-top: 100px;
+        margin-left: 35px;
     }
 }

@@ -13,6 +13,13 @@
     z-index: 100;
 }
 
+#burger-icon{
+    color: #EC6D53;
+    margin-left: 100px;
+    font-size: 40px;
+    transition: 0.5s;
+}
+
 #navbar>img{
     width: 75px;
     height: 75px;

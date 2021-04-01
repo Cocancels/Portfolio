@@ -19,7 +19,8 @@ import {
 
 export function Projets() {
     const [i, setI] = useState(0);
-    const [projetContainerDisplay, setProjetContainerDisplay] = useState({display: "none", opacity: "0", transform: "translateY(-150px)", transition: "0"})
+    const [leftTraitHeight, setLeftTraitHeight] = useState({ height: "0px" });
+    const [projetContainerDisplay, setProjetContainerDisplay] = useState({display: "none", opacity: "0", transform: "translateY(-50px)", transition: "0"})
     const [projetDisplay, setProjetDisplay] = useState({opacity: "1", transform: "translateX(0)", transition:"0"})
     const [animationState, setAnimationState] = useState(false)  
     const [ref, inView] = useInView({
@@ -35,8 +36,16 @@ export function Projets() {
     useEffect(() => {
       if(inView){
         setTimeout(() => {
-          showProjectContainer()
+          setLeftTraitHeight({height: "80%"})
         }, 300)
+        setTimeout(() => {
+          showProjectContainer()
+        }, 1000)
+      } else{
+        setTimeout(() => {
+          setLeftTraitHeight({height: '0'})
+          setProjetContainerDisplay({display: "none", opacity: "0", transform:"translateY(-50px)", transition:"0"})
+        }, 500)
       }
     },[inView])
 
@@ -70,15 +79,14 @@ export function Projets() {
 
   const divNumber = ProjetsList.map((idProject) => {
     return (
-      <div class="buttonProject" id={"buttonProject" + ProjetsList.indexOf(idProject)}>
+      <div onClick={() => goToProject(ProjetsList.indexOf(idProject))} value={ProjetsList.indexOf(idProject)} class="buttonProject" id={"buttonProject" + ProjetsList.indexOf(idProject)}>
           <FontAwesomeIcon icon={faCircle} />
       </div>
     )
   })
 
   function showProjectContainer(){
-    console.log("oui")
-    setProjetContainerDisplay({display: "flex", opacity: "0", transform:"translateY(-150px)", transition:"0"})
+    setProjetContainerDisplay({display: "flex", opacity: "0", transform:"translateY(-50px)", transition:"0"})
     setTimeout(() => {
       setProjetContainerDisplay({display: "flex", opacity: "1", transform:"translateY(0px)", transition: "1s"})
     }, 100)
@@ -116,8 +124,6 @@ export function Projets() {
 
   function changeColor(){
     if(prevIRef.current != null){
-      console.log("i:" + i)
-      console.log("previ:" + prevIRef.current)
       document.getElementById("buttonProject" + i).style.color = "#D5625D"
       document.getElementById("buttonProject" + prevIRef.current).style.color= "white"
     }
@@ -139,14 +145,26 @@ export function Projets() {
       }, 500)
 
      
-    } else {
+    } else if(sign === "plus" ){
       setProjetDisplay({ opacity:"0", transform: "translateX(150px)", transition:"0.5s"})
       setTimeout(() => {
         setProjetDisplay({opacity:"0", transform: "translateX(-300px)", transition:"0"})
         setTimeout(() =>{
           setProjetDisplay({opacity:"0", transform: "translateX(-150px)", transition:"0s"})
           setProjetDisplay({ opacity:"1", transform: "translateX(0px)",transition:"0.5s"})
-          console.log(i)
+        }, 200)
+        setTimeout(() => {
+          setAnimationState(false)
+        }, 500)
+      }, 500)
+      
+    } else if(sign === "any"){
+      setProjetDisplay({ opacity:"0", transform: "translateX(0px)", transition:"0.5s"})
+      setTimeout(() => {
+        setProjetDisplay({opacity:"0", transform: "translateX(0px)", transition:"0"})
+        setTimeout(() =>{
+          setProjetDisplay({opacity:"0", transform: "translateX(0px)", transition:"0s"})
+          setProjetDisplay({ opacity:"1", transform: "translateX(0px)",transition:"0.5s"})
         }, 200)
         setTimeout(() => {
           setAnimationState(false)
@@ -155,20 +173,31 @@ export function Projets() {
     }
   }
 
+  function goToProject(id){
+    if(!animationState){
+      setAnimationState(true)
+      setTimeout(() => {
+        setI(id)
+      }, 500)
+      fadeAnimation("any")
+  }
+  }
+
 
   return (
-    <div  name="projets" className="projets">
-      <div className="projets-container">
-        <h1>Mes projets</h1>
-        <div ref={ref}></div>
-
-        <div style={projetContainerDisplay} class="allProjets">
-          {allProjects[i]}
-        </div>
-        <div style={projetContainerDisplay} id="buttons-project-container">
-          <button onClick={changeProjetMinus} id="changeProjetMinus"> 	<FontAwesomeIcon icon={faChevronLeft} /> </button>
-          <div className="div-number-container">{divNumber}</div>
-          <button onClick={changeProjetPlus} id="changeProjetPlus"><FontAwesomeIcon icon={faChevronRight}/></button>
+    <div name="projets" className="projets">
+      <div ref={ref} style={leftTraitHeight} className="trait-left-projets"></div>
+      <div className="section-projets-container">
+        <h1 style={projetContainerDisplay}>Mes projets</h1>
+        <div className="projets-container">
+          <div style={projetContainerDisplay} class="allProjets">
+            {allProjects[i]}
+          </div>
+          <div style={projetContainerDisplay} id="buttons-project-container">
+            <button onClick={changeProjetMinus} id="changeProjetMinus"> 	<FontAwesomeIcon icon={faChevronLeft} /> </button>
+            <div className="div-number-container">{divNumber}</div>
+            <button onClick={changeProjetPlus} id="changeProjetPlus"><FontAwesomeIcon icon={faChevronRight}/></button>
+          </div>
         </div>
       </div>
     </div>

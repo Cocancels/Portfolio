@@ -14,7 +14,7 @@ import {
 
 export function Presentation() {
   const [presentationTraitHeight, setPresentationTraitHeight] = useState({
-    height: "0px",
+    height: "1px",
   });
 
   const [presentationContent, setPresentationContent] = useState({
@@ -46,6 +46,22 @@ export function Presentation() {
   useEffect(() => {
     if (inView) {
       setTimeout(showContent, 300);
+    } else {
+      setTimeout(() =>{
+        setPresentationTraitHeight({height: "0px"})
+        setPresentationContent({
+          display: "none",
+          opacity: "0",
+          transform: "translateX(150px)",
+        })
+        setButtonsDisplay({
+          display: "none",
+          opacity: "0",
+          transform: "translateX(150px)",
+        })
+        setIsDone(false)
+      }, 100);
+
     }
   }, [inView]);
 
