@@ -1,0 +1,36 @@
+.button-link{
+    transition: 0.5s
+}
+
+.arrow-bottom-navlinks{
+    color: #EC6D53;
+    font-size: 50px;
+}
+
+.arrow-bottom-navlinks:hover{
+    cursor: pointer;
+}
+
+.links-container{
+    width: 450px;
+    display: flex;
+    margin: auto;
+    justify-content: space-around;
+    color: white;
+    font-size: 30px;
+}
+
+@media  (max-width: 640px){
+    .links-container{
+        width: 80%;
+    }
+
+    .button-link{
+        font-size: 20px;
+    }
+
+    .arrow-bottom-navlinks{
+        color: #EC6D53;
+        font-size: 30px;
+    }
+}

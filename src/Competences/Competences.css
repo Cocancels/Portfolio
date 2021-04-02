@@ -1,15 +1,24 @@
 .competences{
     height: 100vh;
     background-color: #1F1F1F;
+    overflow: auto !important;
+
+}
+
+.competences-section{
     display: flex;
     padding-top: 150px;
+}
+
+.navlinks-competences{
+    margin-top: 100px;
+    text-align: center;
 }
 
 .competence-trait{
     width: 10px  !important;
     background: linear-gradient(#D05F5E, #EC6D53);
     margin-left: 50px;
-    height: 75% ;
 }
 
 .competences-container{

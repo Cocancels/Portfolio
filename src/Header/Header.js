@@ -1,4 +1,5 @@
 import { Navbar } from "../Navbar/Navbar";
+import { Navlinks } from "../NavLinks/Navlinks";
 import "./Header.css";
 import React, { useState, useEffect, useRef } from "react";
 import {
@@ -10,7 +11,7 @@ import {
   scroller,
 } from "react-scroll";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faArrowCircleDown } from "@fortawesome/free-solid-svg-icons";
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 
 export function Header() {
@@ -49,6 +50,16 @@ export function Header() {
     opacity: "0",
     transform: "translateY(50px)",
   });
+
+  const [linksDisplay, setLinksDisplay] = useState({
+    opacity: 0,
+    transform: "translateY(10px)",
+  });
+
+  const [buttonRotation, setButtonRotation] = useState({
+    transform: "rotate(0deg)",
+  });
+ 
 
   let i = 0;
   let j = 0;
@@ -166,14 +177,53 @@ export function Header() {
     setTimeout(() => {
       setPictureDisplay({
         display: "flex",
-        opacity: "100",
+        opacity: "1",
         transform: "translateY(0px)",
       });
 
       setButtonDisplay({
         display: "block",
-        opacity: "100",
+        opacity: "1",
         transform: "translateY(0px)",
+        transition: "1s",
+      });
+    }, 100);
+  }
+
+  function linkAnimationOn() {
+    setButtonRotation({
+      transform: "rotate(180deg)",
+      transition: "0.5s ease-in-out",
+    });
+    setLinksDisplay({
+      opacity: "0",
+      transform: "translateY(10px)",
+      transition: "0.5s",
+    });
+    setTimeout(() => {
+      setLinksDisplay({
+        opacity: "1",
+        transform: "translateY(0px)",
+        transition: "0.5s",
+      });
+    }, 100);
+  }
+
+  function linkAnimationOff() {
+    setButtonRotation({
+      transform: "rotate(0deg)",
+      transition: "0.5s ease-in-out",
+    });
+    setLinksDisplay({
+      opacity: "0",
+      transform: "translateY(10px)",
+      transition: "0.5s",
+    });
+    setTimeout(() => {
+      setLinksDisplay({
+        opacity: "0",
+        transform: "translateY(10px)",
+        transition: "0.5s",
       });
     }, 100);
   }
@@ -181,68 +231,69 @@ export function Header() {
   return (
     <header>
       <Navbar />
-      <div className="header-presentation">
-        <div id="flex-container">
-          <div style={leftTraitHeight} className="left-trait"></div>
-          <div id="intro-content">
-            <div id="intro-text">
-              <h1 id="intro-title">
-                {title}
-                {titleCaret}
-              </h1>
-              <h2 id="intro-subtitle">
-                {subTitle}
-                {subTitleCaret}
-              </h2>
-            </div>
-            <div id="intro-logos">
-              <img
-                style={icon1Display}
-                src="./logos/logo_github.svg"
-                alt="logo"
-                className="logo github"
-              />
-              <img
-                style={icon2Display}
-                src="./logos/logo_linkedin.svg"
-                alt="logo"
-                className="logo linkedin"
-              />
-              <img
-                style={icon3Display}
-                src="./logos/logo_gmail.svg"
-                alt="logo"
-                className="logo gmail"
-              />
-              <button style={icon4Display} className="logo cv">
-                CV
-              </button>
+      <div className="header-container">
+        <div className="header-presentation">
+          <div id="flex-container">
+            <div style={leftTraitHeight} className="left-trait"></div>
+            <div id="intro-content">
+              <div id="intro-text">
+                <h1 id="intro-title">
+                  {title}
+                  {titleCaret}
+                </h1>
+                <h2 id="intro-subtitle">
+                  {subTitle}
+                  {subTitleCaret}
+                </h2>
+              </div>
+              <div id="intro-logos">
+                <img
+                  style={icon1Display}
+                  src="./logos/logo_github.svg"
+                  alt="logo"
+                  className="logo github"
+                />
+                <img
+                  style={icon2Display}
+                  src="./logos/logo_linkedin.svg"
+                  alt="logo"
+                  className="logo linkedin"
+                />
+                <img
+                  style={icon3Display}
+                  src="./logos/logo_gmail.svg"
+                  alt="logo"
+                  className="logo gmail"
+                />
+                <button style={icon4Display} className="logo cv">
+                  CV
+                </button>
+              </div>
             </div>
           </div>
+          <img
+            style={pictureDisplay}
+            id="profile-picture"
+            src="./profile_picture.jpg"
+          ></img>
         </div>
-        <img
-          style={pictureDisplay}
-          id="profile-picture"
-          src="./profile_picture.jpg"
-        ></img>
-      </div>
-      <div id="button-container">
-        <button>
-          <Link
-            activeClass="active"
-            className="presentation"
-            to="presentation"
-            spy={true}
-            smooth={true}
-            duration={1000}
-          >
-            <FontAwesomeIcon
-              style={buttonDisplay}
-              id="icon"
-              icon={faArrowCircleDown}
-            />
-          </Link>
-        </button>
+      <div className="navlinks-header" style={buttonDisplay}>
+        <Navlinks 
+          links = {[
+            {
+              link: "presentation",
+              name: "A propos"
+            },  
+            {
+              link : "projets",
+              name: "Projets"
+            },
+            {
+              link : "Compétences",
+              name: "Competences"
+            }]}
+        />
+        </div>
       </div>
     </header>
   );

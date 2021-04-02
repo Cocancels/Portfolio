@@ -4,10 +4,16 @@ header{
     background-size: cover;
 }
 
-.header-presentation{
-    padding-top: 300px;
+.header-container{
     display: flex;
+    flex-direction: column;
+    height: 100vh;
     justify-content: space-between;
+}
+
+.header-presentation{
+    padding-top: 200px;
+    display: flex;
 }
 
 #flex-container{
@@ -69,13 +75,15 @@ header{
 
 }
 
-#button-container{
-    text-align: center;
-    margin-top: 150px;
-    padding-bottom: 30px;
-
+.navlinks-header{
+    width: 100%;
+    margin-bottom: 50px;
+    align-self: center;
 }
 
+.navlinks-header>.button-container{
+    text-align: center;
+}
 
 #button-container>button{
     background: none;
@@ -110,7 +118,21 @@ header{
     font-size: 20px;
 }
 
+
+
+
+.button-link:hover{
+    cursor: pointer;
+    transition: 0.5s;
+    color: #EC6D53 ;
+}
+
+
 @media  (max-width: 640px){
+    .nav-logo{
+        display: none !important;
+    }
+    
     .left-trait{
       margin-left: 10px;
       width: 5px;
@@ -161,5 +183,10 @@ header{
         border-radius: 50%;
         width: 50px;
         height: 50px;
+    }
+
+    .navlinks-header{
+        margin-bottom: 50px;
+        align-self: center;
     }
   }

@@ -1,4 +1,5 @@
 import "./Presentation.css";
+import { Navlinks } from "../NavLinks/Navlinks";
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowCircleRight } from "@fortawesome/free-solid-svg-icons";
@@ -14,7 +15,7 @@ import {
 
 export function Presentation() {
   const [presentationTraitHeight, setPresentationTraitHeight] = useState({
-    height: "1px",
+    height: "0px",
   });
 
   const [presentationContent, setPresentationContent] = useState({
@@ -24,96 +25,41 @@ export function Presentation() {
   });
 
 
-  const [buttonsDisplay, setButtonsDisplay] = useState({
+  const [buttonDisplay, setButtonDisplay] = useState({
     display: "none",
     opacity: "0",
-    transform: "translateX(150px)",
   });
   
+
   const [ref, inView] = useInView({
     threshold: 0,
+    delay: 700
   });
 
-  const [isDone, setIsDone] = useState(false);
+  const [animationState, setAnimationState] = useState(false);
 
   
-  let i = 0;
-  let j = 0;
-  let fullPresentationTitle = "About me";
-  let fullPresentationText =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 
   useEffect(() => {
     if (inView) {
-      console.log("oui")
-      setTimeout(showContent, 300);
+      presentationAnimation();
     } else {
-      console.log("non")
-        setPresentationTraitHeight({ height: "0px", transition: "0s" });
-        setPresentationContent({
-          display: "block",
-          transition: "0s",
-        });
-        setPresentationContent({
-          display: "none",
-          opacity: "0",
-          transform: "translateX(150px)",
-          transition: "0s",
-        });
-        setButtonsDisplay({
-          opacity: "0",
-          transform: "translateX(150px)",
-          transition: "0s",
-        });
-        setTimeout(() => {
-          setIsDone(false)
-        }, 300)
+      setPresentationTraitHeight({height: "0px", transition: "0s"})
+      setPresentationContent({display: "none", opacity: "0", transform: "translateX(150px)"})
+      setButtonDisplay({display: "none", opacity: "0", transform: "translateX(150px)"})
     }
   }, [inView]);
 
 
-
-  function showContent() {
-    if (!isDone) {
-      if (presentationTraitHeight != "300px") {
-        setPresentationTraitHeight({ height: "300px" });
-      }
-      setTimeout(showPresentationContent, 500)
-    }
-  }
-
-  function showPresentationContent() {
-    setPresentationContent({
-      display: "block",
-      opacity: "0",
-      transform: "translateX(150px)",
-    })
-
+  function presentationAnimation() {
+    setPresentationTraitHeight({height: "400px", transition: "1s"})
+    setPresentationContent({display: "block", opacity: "0", transform: "translateX(150px)"})
+    setButtonDisplay({display: "flex", opacity: "0"})
     setTimeout(() => {
-      setPresentationContent({
-        display: "block",
-        opacity: "1",
-        transform: "translateX(0px)",
-      });
-    }, 100);
-    setButtonsDisplay({
-      display: "flex",
-      opacity: "0",
-      tranform: "translateX(150px)",
-    });
-
-    setTimeout(() => {
-      setButtonsDisplay({
-        display: "flex",
-        opacity: "1",
-        tranform: "translateX(0px)",
-      });
-      setIsDone(true);
-
-    }, 500);
-
+      setPresentationContent({opacity: "1", transform: "translateX(0)", transition: "1s"})
+      setButtonDisplay({opacity: "1", transform:"translateX(0)", transition: "1s"})
+    }, 300)
   }
-
 
 
 
@@ -134,48 +80,22 @@ export function Presentation() {
           </p>
         </div>
       </div>
-      <div id="buttons-container" style={buttonsDisplay}>
-        <div id="button-see-project">
-          <h3>Projets</h3>
-          <div className="button-content">
-            <p>
-              Découvrez mes différents projets
-            </p>
-            <button>
-              {" "}
-              <Link
-                activeClass="active"
-                className="projects-link"
-                to="projets"
-                spy={true}
-                smooth={true}
-                duration={1000}
-              >
-                <FontAwesomeIcon id="arrow-right" icon={faArrowCircleRight} />
-              </Link>
-            </button>
-          </div>
-        </div>
-
-        <div id="button-see-project">
-          <h3>Compétences</h3>
-          <div className="button-content">
-            <p>Découvrez mes compétences</p>
-            <button>
-              {" "}
-              <Link
-                activeClass="active"
-                className="projects-link"
-                to="header-presentation"
-                spy={true}
-                smooth={true}
-                duration={1000}
-              >
-                <FontAwesomeIcon id="arrow-right" icon={faArrowCircleRight} />
-              </Link>
-            </button>
-          </div>
-        </div>
+      <div className="navlinks-presentation" style={buttonDisplay}>
+        <Navlinks 
+          links = {[
+            {
+              link: "header-presentation",
+              name: "Accueil"
+            },  
+            {
+              link : "projets",
+              name: "Projets"
+            },
+            {
+              link : "competences",
+              name: "Competences"
+            }]}
+        />
       </div>
     </div>
   );

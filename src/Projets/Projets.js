@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./Projets.css";
 import ProjetsList from "./projets.json";
+import { Navlinks } from "../NavLinks/Navlinks";
 import {useInView} from 'react-intersection-observer'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowCircleRight } from "@fortawesome/free-solid-svg-icons";
@@ -23,8 +24,10 @@ export function Projets() {
     const [projetContainerDisplay, setProjetContainerDisplay] = useState({display: "none", opacity: "0", transform: "translateY(-50px)", transition: "0"})
     const [projetDisplay, setProjetDisplay] = useState({opacity: "1", transform: "translateX(0)", transition:"0"})
     const [animationState, setAnimationState] = useState(false)  
+    const [buttonDisplay, setButtonDisplay] = useState({display: "none", opacity: "0", transition: "0s"})
     const [ref, inView] = useInView({
       threshold: 0,
+      delay: 700,
     });
   
     const prevIRef = useRef();
@@ -34,23 +37,18 @@ export function Projets() {
     },[i]);
 
     useEffect(() => {
-      if(inView){
-        setTimeout(() => {
-          setLeftTraitHeight({height: "80%"})
-        }, 300)
-        setTimeout(() => {
-          showProjectContainer()
-        }, 1000)
-      } else{
-        setTimeout(() => {
-          setLeftTraitHeight({ height: "0", transition: "0s" });
-          setProjetContainerDisplay({
-            display: "none",
-            opacity: "0",
-            transform: "translateY(-50px)",
-            transition: "0s",
-          });
-        }, 500)
+      if (inView) {
+        setLeftTraitHeight({ height: "80%" });
+        showProjectContainer();
+      } else {
+        setLeftTraitHeight({ height: "0", transition: "0s" });
+        setProjetContainerDisplay({
+          display: "none",
+          opacity: "0",
+          transform: "translateY(-50px)",
+          transition: "0s",
+        });
+        setButtonDisplay({display: "none", opacity: "0"})
       }
     },[inView])
 
@@ -91,8 +89,10 @@ export function Projets() {
   })
 
   function showProjectContainer(){
+    setButtonDisplay({display: "block", opacity: "0", transition: "1s"})
     setProjetContainerDisplay({display: "flex", opacity: "0", transform:"translateY(-50px)", transition:"0"})
     setTimeout(() => {
+      setButtonDisplay({display: "block", opacity: "1", transition: "1s"})
       setProjetContainerDisplay({display: "flex", opacity: "1", transform:"translateY(0px)", transition: "1s"})
     }, 100)
   }
@@ -182,8 +182,8 @@ export function Projets() {
     if(!animationState){
       setAnimationState(true)
       setTimeout(() => {
-        setI(id)
-      }, 500)
+        setI(id);
+      }, 550);
       fadeAnimation("any")
   }
   }
@@ -197,15 +197,15 @@ export function Projets() {
         className="trait-left-projets"
       ></div>
       <div className="section-projets-container">
-        <h1 style={projetContainerDisplay}>Mes projets</h1>
         <div className="projets-container">
+          <h1 style={projetContainerDisplay}>Mes projets</h1>
           <div style={projetContainerDisplay} class="allProjets">
             {allProjects[i]}
           </div>
           <div style={projetContainerDisplay} id="buttons-project-container">
             <button onClick={changeProjetMinus} id="changeProjetMinus">
               {" "}
-              <FontAwesomeIcon icon={faChevronLeft} />{" "}
+              <FontAwesomeIcon icon={faChevronLeft} />
             </button>
             <div className="div-number-container">{divNumber}</div>
             <button onClick={changeProjetPlus} id="changeProjetPlus">
@@ -213,6 +213,24 @@ export function Projets() {
             </button>
           </div>
         </div>
+        <div className="navlinks-projets" style={buttonDisplay}>
+              <Navlinks
+                links={[
+                  {
+                    link: "header-presentation",
+                    name: "Accueil",
+                  },
+                  {
+                    link: "presentation",
+                    name: "Présentation",
+                  },
+                  {
+                    link: "competences",
+                    name: "Competences",
+                  },
+                ]}
+              />
+            </div>
       </div>
     </div>
   );

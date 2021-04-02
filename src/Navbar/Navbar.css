@@ -3,6 +3,7 @@
     background-color: #0A0A0A;
     display: flex;
     padding: 20px 0px;
+    height: 20px;
     color: white;
     border-bottom: 5px solid #EC6D53;
     justify-content: space-between;
@@ -41,8 +42,33 @@
     cursor: pointer;
 }
 
+hr{
+    display: none;
+}
+
 @media  (max-width: 640px){
     #navbar{
-        display: none;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #burger-icon{
+        margin-left: 0px;
+        justify-self: start;
+    }
+
+    .navLinks{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin-top: 30%;
+        margin-bottom: 40%;
+    }
+
+    hr{
+        display: flex;
+        width: 60%;
+        border-color: #EC6D53;
     }
   }
