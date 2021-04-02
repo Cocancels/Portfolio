@@ -33,7 +33,7 @@ export function Competences() {
       competenceAnimation()
     } else {
       setCompetenceTraitHeight({height: "0px", transition: "0s"})
-      setCompetenceDisplay({display: "none", opacity: "0", transition: "0s"})
+      setCompetenceDisplay({ opacity: "0", transition: "0s" });
     }
   }, [inView])
 
@@ -43,7 +43,11 @@ export function Competences() {
     setTimeout(() => {
       setCompetenceDisplay({display: "block", opacity: "1", transform: "translateY(0px)", transition: "1s"})
       setTimeout(() => {
-        setCompetenceTraitHeight({height: "700px", transition: "1s"})
+        if (window.innerWidth > 640) {
+          setCompetenceTraitHeight({ height: "700px", transition: "1s" });
+        } else {
+          setCompetenceTraitHeight({ height: "600px", transition: "1s" });
+        }
       }, 100)
     }, 100)
   }
