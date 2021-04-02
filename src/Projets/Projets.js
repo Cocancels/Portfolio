@@ -43,8 +43,13 @@ export function Projets() {
         }, 1000)
       } else{
         setTimeout(() => {
-          setLeftTraitHeight({height: '0'})
-          setProjetContainerDisplay({display: "none", opacity: "0", transform:"translateY(-50px)", transition:"0"})
+          setLeftTraitHeight({ height: "0", transition: "0s" });
+          setProjetContainerDisplay({
+            display: "none",
+            opacity: "0",
+            transform: "translateY(-50px)",
+            transition: "0s",
+          });
         }, 500)
       }
     },[inView])
@@ -186,7 +191,11 @@ export function Projets() {
 
   return (
     <div name="projets" className="projets">
-      <div ref={ref} style={leftTraitHeight} className="trait-left-projets"></div>
+      <div
+        ref={ref}
+        style={leftTraitHeight}
+        className="trait-left-projets"
+      ></div>
       <div className="section-projets-container">
         <h1 style={projetContainerDisplay}>Mes projets</h1>
         <div className="projets-container">
@@ -194,9 +203,14 @@ export function Projets() {
             {allProjects[i]}
           </div>
           <div style={projetContainerDisplay} id="buttons-project-container">
-            <button onClick={changeProjetMinus} id="changeProjetMinus"> 	<FontAwesomeIcon icon={faChevronLeft} /> </button>
+            <button onClick={changeProjetMinus} id="changeProjetMinus">
+              {" "}
+              <FontAwesomeIcon icon={faChevronLeft} />{" "}
+            </button>
             <div className="div-number-container">{divNumber}</div>
-            <button onClick={changeProjetPlus} id="changeProjetPlus"><FontAwesomeIcon icon={faChevronRight}/></button>
+            <button onClick={changeProjetPlus} id="changeProjetPlus">
+              <FontAwesomeIcon icon={faChevronRight} />
+            </button>
           </div>
         </div>
       </div>

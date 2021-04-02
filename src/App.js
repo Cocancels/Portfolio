@@ -11,7 +11,7 @@ function App() {
       <Header />
       <Presentation />
       <Projets />
-      {/* <Competences /> */}
+      <Competences />
     </div>
   );
 }

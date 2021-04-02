@@ -11,12 +11,8 @@ body{
 
 }
 
-
 @media  (max-width: 640px){
-
-body{
-  overflow: visible;
-
-}
-
+  body{
+    overflow: visible;
+  }
 }

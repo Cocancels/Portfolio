@@ -141,15 +141,24 @@
 
 .buttonProject>svg{
     font-size: 20px;
+    transition: 0.5s;
+
 }
 
 #changeProjetMinus,#changeProjetPlus{
     transition: 0.5s;
 }
 
-#changeProjetMinus:hover,#changeProjetPlus:hover, .buttonProject:hover{
+#changeProjetMinus:hover,#changeProjetPlus:hover{
     cursor: pointer;
     color: #EC6D53;
+    transition: 0.5s;
+}
+
+.buttonProject>svg:hover{
+    cursor: pointer;
+    color: #EC6D53;
+    
 }
 
 @media  (max-width: 640px){

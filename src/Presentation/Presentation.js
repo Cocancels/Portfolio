@@ -45,23 +45,29 @@ export function Presentation() {
 
   useEffect(() => {
     if (inView) {
+      console.log("oui")
       setTimeout(showContent, 300);
     } else {
-      setTimeout(() =>{
-        setPresentationTraitHeight({height: "0px"})
+      console.log("non")
+        setPresentationTraitHeight({ height: "0px", transition: "0s" });
+        setPresentationContent({
+          display: "block",
+          transition: "0s",
+        });
         setPresentationContent({
           display: "none",
           opacity: "0",
           transform: "translateX(150px)",
-        })
+          transition: "0s",
+        });
         setButtonsDisplay({
-          display: "none",
           opacity: "0",
           transform: "translateX(150px)",
-        })
-        setIsDone(false)
-      }, 100);
-
+          transition: "0s",
+        });
+        setTimeout(() => {
+          setIsDone(false)
+        }, 300)
     }
   }, [inView]);
 
@@ -72,8 +78,7 @@ export function Presentation() {
       if (presentationTraitHeight != "300px") {
         setPresentationTraitHeight({ height: "300px" });
       }
-      setTimeout(showPresentationContent, 1000)
-      setIsDone(true);
+      setTimeout(showPresentationContent, 500)
     }
   }
 
@@ -91,13 +96,6 @@ export function Presentation() {
         transform: "translateX(0px)",
       });
     }, 100);
-    setTimeout(showButtons, 500);
-
-  }
-
-
-
-  function showButtons() {
     setButtonsDisplay({
       display: "flex",
       opacity: "0",
@@ -110,16 +108,22 @@ export function Presentation() {
         opacity: "1",
         tranform: "translateX(0px)",
       });
-    }, 100);
+      setIsDone(true);
+
+    }, 500);
+
   }
 
+
+
+
   return (
-    <section name="presentation" className="presentation">
+    <div  name="presentation" className="presentation">
       <div id="presentation-container">
         <div
+        ref={ref}
           style={presentationTraitHeight}
           className="presentation-trait"
-          ref={ref}
         ></div>
         <div id="presentation-content" style={presentationContent}>
           <h1>A propos</h1>
@@ -173,6 +177,6 @@ export function Presentation() {
           </div>
         </div>
       </div>
-    </section>
+    </div>
   );
 }
