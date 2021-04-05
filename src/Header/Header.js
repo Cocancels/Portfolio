@@ -1,17 +1,10 @@
 import { Navbar } from "../Navbar/Navbar";
 import { Navlinks } from "../NavLinks/Navlinks";
+import { BubblesNav } from "../Bubbles-nav/BubblesNav"
 import "./Header.css";
+import {useInView} from 'react-intersection-observer'
 import React, { useState, useEffect, useRef } from "react";
-import {
-  Link,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller,
-} from "react-scroll";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import InView from "react-intersection-observer";
 
 
 export function Header() {
@@ -59,24 +52,37 @@ export function Header() {
   const [buttonRotation, setButtonRotation] = useState({
     transform: "rotate(0deg)",
   });
- 
+
+  const [ref, inView] = useInView({
+    threshold: 0,
+    delay: 1000
+  });
+
+  const [animationState, setAnimationState] = useState(false)
+
 
   let i = 0;
   let j = 0;
   let fullTitle = "Corentin Ancel";
   let fullSubTitle = "Développeur Web";
 
-  window.onbeforeunload = function () {
-    window.scrollTo(0, 0);
-  };
+  // window.onbeforeunload = function () {
+  //   window.scrollTo(0, 0);
+  // };
 
   useEffect(() => {
-    setLeftTraitHeight({ height: "400px" });
-    setTimeout(() => {
-      setTitleCaret("|");
-      showTitle();
-    }, 1000);
-  }, []);
+    if(inView){
+      changeBubble()
+      if(!animationState){
+        setAnimationState(true)
+        setLeftTraitHeight({ height: "400px" });
+        setTimeout(() => {
+        setTitleCaret("|");
+        showTitle();
+      }, 1000);
+      }
+    }
+  }, [inView]);
 
   function showTitle() {
     i++;
@@ -190,51 +196,23 @@ export function Header() {
     }, 100);
   }
 
-  function linkAnimationOn() {
-    setButtonRotation({
-      transform: "rotate(180deg)",
-      transition: "0.5s ease-in-out",
-    });
-    setLinksDisplay({
-      opacity: "0",
-      transform: "translateY(10px)",
-      transition: "0.5s",
-    });
-    setTimeout(() => {
-      setLinksDisplay({
-        opacity: "1",
-        transform: "translateY(0px)",
-        transition: "0.5s",
-      });
-    }, 100);
+
+  function changeBubble() {
+    var bubbles = document.getElementsByClassName("bubble");
+    for (var i = 0; i < bubbles.length; i++) {
+      bubbles[i].style.backgroundColor = "#0E0E0E";
+    }
+    document.getElementById("bubble-header").style.backgroundColor =
+      "#EC6D53";
   }
 
-  function linkAnimationOff() {
-    setButtonRotation({
-      transform: "rotate(0deg)",
-      transition: "0.5s ease-in-out",
-    });
-    setLinksDisplay({
-      opacity: "0",
-      transform: "translateY(10px)",
-      transition: "0.5s",
-    });
-    setTimeout(() => {
-      setLinksDisplay({
-        opacity: "0",
-        transform: "translateY(10px)",
-        transition: "0.5s",
-      });
-    }, 100);
-  }
 
   return (
-    <header>
+    <header ref={ref}>
       <Navbar />
       <div className="header-container">
         <div className="header-presentation">
           <div id="flex-container">
-            <div style={leftTraitHeight} className="left-trait"></div>
             <div id="intro-content">
               <div id="intro-text">
                 <h1 id="intro-title">
@@ -271,28 +249,20 @@ export function Header() {
               </div>
             </div>
           </div>
-          <img
-            style={pictureDisplay}
-            id="profile-picture"
-            src="./profile_picture.jpg"
-          ></img>
         </div>
-      <div className="navlinks-header" style={buttonDisplay}>
-        <Navlinks 
-          links = {[
-            {
-              link: "presentation",
-              name: "A propos"
-            },  
-            {
-              link : "projets",
-              name: "Projets"
-            },
-            {
-              link : "Compétences",
-              name: "Competences"
-            }]}
-        />
+        <div className="navlinks-header" style={buttonDisplay}>
+          <Navlinks
+            links={[
+              {
+                link: "presentation",
+                name: "A propos",
+              },
+              {
+                link: "projets",
+                name: "Projets",
+              },
+            ]}
+          />
         </div>
       </div>
     </header>

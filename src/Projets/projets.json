@@ -3,12 +3,12 @@
     "image": "./screen-devcorp.jpg",
     "name": "Dev'corp",
     "description": "Projet réalisé dans le cadre du projet de fin d'année à l'IIM. Nous étions en groupe de 5, et nous avons eu une année pour travailler sur ce site qui est un forum d entraide entre étudiants en développement au pôle Léonard de Vinci",
-    
+     
     "languages": ["logo-symfony.png", "logo-js.png"],
     "link": "https://github.com/Cocancels/Devlab_S1"
   },
   {
-    "image": "./profile_picture.jpg",
+    "image": "./logos/logo-iim.png",
     "name": "1",
     "description": "Projet réalisé dans le cadre du projet de fin d'année à l'IIM.",
     "languages": ["logo-symfony.png", "logo-js.png"],
@@ -16,7 +16,7 @@
   },
 
   {
-    "image": "./profile_picture.jpg",
+    "image": "./logos/logo-devlab.jpg",
     "name": "2",
     "description": "Projet réalisé dans le cadre du projet de fin d'année à l'IIM.",
     "languages": ["logo-symfony.png", "logo-js.png"],

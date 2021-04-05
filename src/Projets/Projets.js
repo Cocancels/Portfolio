@@ -9,14 +9,6 @@ import { faCircle } from "@fortawesome/free-solid-svg-icons";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
-import {
-  Link,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller,
-} from "react-scroll";
 
 export function Projets() {
     const [i, setI] = useState(0);
@@ -27,7 +19,7 @@ export function Projets() {
     const [buttonDisplay, setButtonDisplay] = useState({display: "none", opacity: "0", transition: "0s"})
     const [ref, inView] = useInView({
       threshold: 0,
-      delay: 700,
+      delay: 1000
     });
   
     const prevIRef = useRef();
@@ -38,6 +30,7 @@ export function Projets() {
 
     useEffect(() => {
       if (inView) {
+        changeBubble()
         setLeftTraitHeight({ height: "80%" });
         showProjectContainer();
       } else {
@@ -188,17 +181,24 @@ export function Projets() {
   }
   }
 
+  function changeBubble() {
+    var bubbles = document.getElementsByClassName("bubble");
+    for (var i = 0; i < bubbles.length; i++) {
+      bubbles[i].style.backgroundColor = "#0E0E0E";
+    }
+    document.getElementById("bubble-projets").style.backgroundColor =
+      "#EC6D53";
+  }
+
 
   return (
-    <div name="projets" className="projets">
-      <div
-        ref={ref}
-        style={leftTraitHeight}
-        className="trait-left-projets"
-      ></div>
+    <div ref={ref} name="projets" className="projets">
+      <div></div>
       <div className="section-projets-container">
         <div className="projets-container">
-          <h1 style={projetContainerDisplay}>Mes projets</h1>
+          <div className="projets-title">
+              <h1 style={projetContainerDisplay}>Mes projets</h1>
+          </div>
           <div style={projetContainerDisplay} class="allProjets">
             {allProjects[i]}
           </div>
@@ -214,23 +214,19 @@ export function Projets() {
           </div>
         </div>
         <div className="navlinks-projets" style={buttonDisplay}>
-              <Navlinks
-                links={[
-                  {
-                    link: "header-presentation",
-                    name: "Accueil",
-                  },
-                  {
-                    link: "presentation",
-                    name: "Présentation",
-                  },
-                  {
-                    link: "competences",
-                    name: "Competences",
-                  },
-                ]}
-              />
-            </div>
+          <Navlinks
+            links={[
+              {
+                link: "header-presentation",
+                name: "Accueil",
+              },
+              {
+                link: "presentation",
+                name: "Présentation",
+              },
+            ]}
+          />
+        </div>
       </div>
     </div>
   );

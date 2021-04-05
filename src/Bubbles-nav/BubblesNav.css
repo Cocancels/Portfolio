@@ -1,0 +1,47 @@
+.bubbles{
+    transform: translateY(-50%);
+    position: fixed;
+    right: 50px;
+    top: 50%;
+}
+
+
+#bubble-header {
+    background-color: #EC6D53;
+}
+
+.bubbles div{
+    width: 25px;
+    height: 25px;
+    border: solid 5px #EC6D53;
+    border-radius: 50%;
+    margin-top: 50px;
+}
+
+@media  (max-width: 640px){
+    .bubbles{
+        right: 5px;
+    }
+
+    .bubbles div{
+        width: 15px;
+        height: 15px;
+        border: solid 2px #EC6D53;
+        border-radius: 50%;
+        margin-top: 20px;
+    }
+    
+}
+
+@media  (min-width: 640px) and (max-width: 1024px){
+    .bubbles{
+        right: 10px;
+    }
+
+    .bubbles div{
+        width: 30px;
+        height: 30px;
+        margin-top: 30px;
+    }
+    
+}

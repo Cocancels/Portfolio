@@ -1,7 +1,6 @@
 .presentation{
-    background-image: radial-gradient(circle at 16% 83%, rgba(148, 148, 148,0.06) 0%, rgba(148, 148, 148,0.06) 50%,rgba(63, 63, 63,0.06) 50%, rgba(63, 63, 63,0.06) 100%),radial-gradient(circle at 68% 87%, rgba(66, 66, 66,0.06) 0%, rgba(66, 66, 66,0.06) 50%,rgba(105, 105, 105,0.06) 50%, rgba(105, 105, 105,0.06) 100%),radial-gradient(circle at 38% 50%, rgba(123, 123, 123,0.06) 0%, rgba(123, 123, 123,0.06) 50%,rgba(172, 172, 172,0.06) 50%, rgba(172, 172, 172,0.06) 100%),linear-gradient(90deg, hsl(18,0%,1%),hsl(18,0%,1%));
     height: 100vh;
-    background-color: #1F1F1F;
+    margin-bottom: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -14,16 +13,17 @@
 
 #presentation-container{
     display: flex;
-    padding-top: 200px;
+    padding-top: 150px;
 }
 
-#presentation-content{
+#presentation-content, .competences-content{
     max-width: 80%;
     margin-left: 50px;
 }
 
-#presentation-content>h1{
-    font-size: 72px;
+#presentation-content>h1, .competences-content>h1{
+    text-transform: uppercase;
+    font-size: 60px;
   background: -webkit-linear-gradient(50deg, #D05F5E, #EC6D53);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -32,11 +32,13 @@
 #presentation-content>p{
     margin-top: 50px;
     font-size: 30px;
+    font-weight: 400;
+    line-height: 40px;
     color: white;  
 }
 
 .presentation-trait{
-    width: 10px;
+    width: 5px;
     background: linear-gradient(#D05F5E, #EC6D53);
     margin-left: 50px;
 
@@ -95,15 +97,38 @@
 
 .button-content>button:focus{
     outline: 0;
+}
+
+#competences-container{
+    display: flex;
+}
+
+.competences-logos{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.logo-competence>img{
+    height: auto;
+    width: 100px;
+    margin-right: 100px;
 
 }
 
+
+
 @media  (max-width: 640px){
+
     #presentation-container{
         padding-top: 100px;
     }
 
-    #presentation-content{
+    #competences-container{
+        margin-top: 50px;
+    }
+
+    #presentation-content, .competences-content{
         max-width: auto;
         margin-left: 0px;
     }
@@ -115,14 +140,20 @@
 
     }
 
-    #presentation-content>h1{
-        font-size: 50px;
+    #presentation-content>h1, .competences-content>h1{
+        font-size: 30px;
+    }
+
+    #presentation-content *{
+        overflow-y: scroll;
     }
 
     #presentation-content>p{
-        margin-top: 50px;
-        font-size: 20px;
+        margin-top: 20px;
+        font-size: 15px;
         color: white;  
+        line-height: 22px;
+        overflow-y: scroll;
     }
 
     #buttons-container{
@@ -154,4 +185,87 @@
         height: 30px;
         width: 30px;
     }
+
+    .competences-logos{
+        margin-top: 20px;
+    }
+
+    .logo-competence>img{
+        margin-top: 20px;
+        height: auto;
+        width: 40px;
+        margin-right: 30px;
+    }
+
+    .navlinks-presentation>.button-container{
+        width: 300px;
+    }
+
   }
+
+@media (min-width: 640px) and (max-width: 1024px) {
+    #presentation-content>h1, .competences-content>h1{
+        font-size: 50px;
+    }
+
+    #presentation-content>p{
+        font-size: 22px;
+        line-height: 32px;
+        margin-top: 25px;
+    }
+
+
+    .logo-competence>img{
+        width: 75px;
+        margin-right: 50px;
+        margin-top: 50px;
+    }
+
+    .competences-logos{
+        margin-top: 0px;
+    }
+}
+
+@media (max-height: 700px) {
+    #presentation-content>p{
+        line-height: 20px;
+        font-size: 13px;
+    }
+}
+
+@media (max-height: 600px) {
+    .presentation *{
+        overflow-y: scroll;
+    }
+}
+
+@media (min-width: 1024px) and (max-height: 1366px) {
+    #presentation-content>h1, .competences-content>h1{
+        font-size: 72px;
+    }
+
+    #presentation-content>p{
+        font-size: 30px;
+        line-height: 40px;
+    }
+
+
+    .logo-competence>img{
+        width: 90px;
+        margin-right: 75px;
+        margin-top: 50px;
+    }
+}
+
+@media (max-height: 700px) {
+    #presentation-content>p{
+        line-height: 20px;
+        font-size: 13px;
+    }
+}
+
+@media (max-height: 600px) {
+    .presentation *{
+        overflow-y: scroll;
+    }
+}

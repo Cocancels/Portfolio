@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Javascript",
+    "image": "logo-js.png",
+    "level": "Bon"
+  },
+  {
+    "name": "Symfony",
+    "image": "logo-symfony.png",
+    "level": "Intermédiaire"
+  },
+  {
+    "name": "Laravel",
+    "image": "logo-laravel.png",
+    "level": "Intermédiaire"
+  },
+  {
+    "name": "React",
+    "image": "logo-react.png",
+    "level": "Intermédiaire"
+  },
+  {
+    "name": "VueJS",
+    "image": "logo-vue.png",
+    "level": "Intermédiaire"
+  },
+  {
+    "name": "NodeJS",
+    "image": "logo-node.png",
+    "level": "Débutant"
+  },
+  {
+    "name": "SAAS",
+    "image": "logo-saas.png",
+    "level": "Débutant"
+  }
+]

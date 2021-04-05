@@ -30,7 +30,7 @@ export function Navbar() {
 
 
   function showNav() {
-    if (window.innerWidth   >   640) {
+    if (window.innerWidth> 1024) {
       if (navDisplay.display != "flex" && navDisplay.opacity != "1") {
         setNavHeight({ height: "80px" });
         setNavDisplay({ display: "flex", opacity: "0" });
@@ -46,7 +46,7 @@ export function Navbar() {
 
 
   function hideNav() {
-    if (window.innerWidth   >   640) {
+    if (window.innerWidth >   1024) {
       if (navDisplay.display != "none" && navDisplay.opacity != "0") {
         setNavHeight({ height: "20px" });
         setNavDisplay({ display: "flex", opacity: "0" });
@@ -63,7 +63,7 @@ export function Navbar() {
   }
 
   function responsiveNavAnimation() {
-    if(window.innerWidth < 640 && navOn === false){
+    if(window.innerWidth <= 1024 && navOn === false){
       setNavOn(true)
       setNavHeight({height: "100vh", transition: "1s"})
       setNavDisplay({display: "flex", opacity: "0"})
@@ -72,7 +72,7 @@ export function Navbar() {
         setNavDisplay({display: "flex", opacity: "1", transition: "1s"})
         setBurgerDisplay({display: "flex", opacity: "1", transition: "0.25s"})
       }, 500)
-    } else if (window.innerWidth < 640 && navOn === true){
+    } else if (window.innerWidth <= 1024 && navOn === true){
       setNavOn(false)
       setNavHeight({height: "30px"})
       setNavDisplay({display: "flex", opacity: "0", transition: "1s"})
@@ -94,7 +94,12 @@ export function Navbar() {
       onMouseLeave={hideNav}
       id="navbar"
     >
-      <FontAwesomeIcon onClick={responsiveNavAnimation} style={burgerDisplay} id="burger-icon" icon={faBars} />
+      <FontAwesomeIcon
+        onClick={responsiveNavAnimation}
+        style={burgerDisplay}
+        id="burger-icon"
+        icon={faBars}
+      />
 
       <img
         timer={1000}
@@ -103,7 +108,7 @@ export function Navbar() {
         alt="logo"
         className="nav-logo"
       />
-      <ul className="navLinks" style={navDisplay} >
+      <ul className="navLinks" style={navDisplay}>
         <li>
           <Link
             activeClass="active"
@@ -126,7 +131,6 @@ export function Navbar() {
             smooth={true}
             duration={1000}
             onClick={responsiveNavAnimation}
-
           >
             A propos
           </Link>
@@ -142,27 +146,11 @@ export function Navbar() {
             smooth={true}
             duration={1000}
             onClick={responsiveNavAnimation}
-
           >
             Projets
           </Link>
         </li>
         <hr></hr>
-
-        <li>
-          {" "}
-          <Link
-            activeClass="active"
-            className="navlink navCompetences"
-            to="competences"
-            smooth={true}
-            duration={1000}
-            onClick={responsiveNavAnimation}
-
-          >
-            Compétences
-          </Link>
-        </li>
       </ul>
     </nav>
   );

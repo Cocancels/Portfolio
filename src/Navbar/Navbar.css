@@ -1,6 +1,6 @@
 #navbar{
     width: 100%;
-    background-color: #0A0A0A;
+    background-color: #0E0E0E;
     display: flex;
     padding: 20px 0px;
     height: 20px;
@@ -46,7 +46,7 @@ hr{
     display: none;
 }
 
-@media  (max-width: 640px){
+@media  (max-width: 1024px){
     #navbar{
         flex-direction: column;
         justify-content: center;
@@ -70,5 +70,13 @@ hr{
         display: flex;
         width: 60%;
         border-color: #EC6D53;
+    }
+
+    .nav-logo{
+        display: none !important;
+    }
+
+    #navbar>ul{
+        font-size: 40px;
     }
   }

@@ -1,7 +1,5 @@
 .projets{
-    display: flex;
     height: 101vh;
-    background-image: radial-gradient(circle at 99% 33%, hsla(235,0%,48%,0.03) 0%, hsla(235,0%,48%,0.03) 37%,transparent 37%, transparent 100%),radial-gradient(circle at 46% 16%, hsla(235,0%,48%,0.03) 0%, hsla(235,0%,48%,0.03) 43%,transparent 43%, transparent 100%),radial-gradient(circle at 99% 25%, hsla(235,0%,48%,0.03) 0%, hsla(235,0%,48%,0.03) 22%,transparent 22%, transparent 100%),radial-gradient(circle at 57% 88%, hsla(235,0%,48%,0.03) 0%, hsla(235,0%,48%,0.03) 86%,transparent 86%, transparent 100%),radial-gradient(circle at 82% 78%, hsla(235,0%,48%,0.03) 0%, hsla(235,0%,48%,0.03) 22%,transparent 22%, transparent 100%),linear-gradient(90deg, rgb(0,0,0),rgb(0,0,0));background-image: radial-gradient(circle at 99% 33%, hsla(235,0%,48%,0.03) 0%, hsla(235,0%,48%,0.03) 37%,transparent 37%, transparent 100%),radial-gradient(circle at 46% 16%, hsla(235,0%,48%,0.03) 0%, hsla(235,0%,48%,0.03) 43%,transparent 43%, transparent 100%),radial-gradient(circle at 99% 25%, hsla(235,0%,48%,0.03) 0%, hsla(235,0%,48%,0.03) 22%,transparent 22%, transparent 100%),radial-gradient(circle at 57% 88%, hsla(235,0%,48%,0.03) 0%, hsla(235,0%,48%,0.03) 86%,transparent 86%, transparent 100%),radial-gradient(circle at 82% 78%, hsla(235,0%,48%,0.03) 0%, hsla(235,0%,48%,0.03) 22%,transparent 22%, transparent 100%),linear-gradient(90deg, rgb(0,0,0),rgb(0,0,0));
 }
 
 .navlinks-projets{
@@ -9,8 +7,9 @@
     margin-bottom: 30px;
 }
 
-.projets-container>h1{
-    text-align: left;
+.projets-title>h1{
+    text-transform: uppercase;
+    justify-content: center;
     padding-top: 150px;
     background: -webkit-linear-gradient(50deg, #D05F5E, #EC6D53);
     -webkit-background-clip: text;
@@ -30,7 +29,10 @@
 }
 
 .allProjets{
-    margin-top: 75px;
+    width: 100%;
+    margin: auto;
+    justify-content: center;
+    margin-top: 100px;
     color: white;
 }
 
@@ -47,12 +49,13 @@
 .projet-container{
     background: #0C0C0C;
     display: flex;
-    width: 1500px;
+    width: 60%;
+    margin: auto;
 }
 
 .projet-image{
-    width: 600px;
-    height: 350px;
+    width: 800px;
+    height: 400px;
     object-fit: cover;
 
 }
@@ -87,6 +90,10 @@
 .projet-languages>p{
     font-size: 20px;
     max-width: 380px;
+}
+
+.button-container{
+    margin-bottom: 30px;
 }
 
 #button-container-projet{
@@ -169,9 +176,15 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    height: 100%;
 }
 
 @media  (max-width: 640px){
+    .navlinks-projets>.button-container{
+        width: auto;
+        margin-bottom: 0px;
+    }
+
     .projets{
         width: 100vw;
         overflow-x: hidden;
@@ -189,7 +202,6 @@
         height: 150px;
     }
 
-
     .projet-container{
         flex-direction: column;
         width: 300px;
@@ -197,14 +209,13 @@
         height: 325px;
     }
 
-
     .projet-content{
         width: auto;
         height: 100%;
     }
 
     .allProjets{
-        margin-top: 50px;
+        margin-top: 40px;
    }
 
     .projet-name{
@@ -236,10 +247,10 @@
         height: 100vh;
     }
 
-    .projets-container>h1{
-        font-size: 50px;
+    .projets-title>h1{
+        text-align: center;
+        font-size: 30px;
         padding-top: 100px;
-        margin-left: 35px;
 
     }
 
@@ -281,5 +292,80 @@
     .projets-container{
         display: flex;
         flex-direction: column;
+    }
+}
+
+@media  (min-width: 640px) and (max-width: 1024px){
+    .projet-container{
+        flex-direction: column;
+        height: 525px;
+    }
+
+    .allProjets{
+        margin-top: 50px;
+    }
+
+    .projet-image{
+        height: 200px;
+        width: auto;
+    }
+
+    .projet-content{
+        width: auto;
+        height: 100%;
+    }
+
+    .projets-title>h1{
+        font-size: 50px;
+    }
+
+    .projet-description{
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    .language-logo{
+        margin-top: 0px;
+    }
+
+    .projet-languages{
+        margin-top: 0px;
+    }
+}
+
+
+@media (max-width: 1024px) and (min-height: 1366px) {
+    .section-projets-container{
+        justify-content: space-around;
+    }
+
+    .projets-title>h1{
+        font-size: 72px;
+    }
+
+    .projet-container{
+        height: 700px;
+    }
+
+    .projet-description{
+        font-size: 25px;
+    }
+
+    .projet-content{
+        height: 100%
+    }
+
+
+    #buttons-project-container>button{
+        font-size: 50px
+    }
+
+    .buttonProject{
+        margin: 10px;
+    }
+
+    .buttonProject>svg{
+        font-size: 30px;
     }
 }
