@@ -97,8 +97,9 @@ export function Presentation() {
             Bonjour ! Moi c'est Corentin, j'ai 19 ans et je suis actuellement à
             l'institut de l'Internet et du Multimédia, en développement web. Je
             suis passionné par le développement depuis plusieurs années
-            maintenant, plus particulièrement au niveau Back-End (j'utilise beaucoup Laravel et Symfony).
-            Mon objectif est de me lancer en freelance, pour pouvoir être indépendant et 
+            maintenant, plus particulièrement au niveau Back-End (j'utilise
+            beaucoup Laravel et Symfony). Mon objectif est de me lancer en
+            freelance, pour pouvoir être indépendant.
           </p>
         </div>
       </div>
