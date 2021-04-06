@@ -38,8 +38,14 @@
 
 }
 
+.navLinks>li{
+    cursor: pointer;
+    transition: 0.5s;
+}
+
 .navLinks>li:hover{
     cursor: pointer;
+    color: #EC6D53;
 }
 
 hr{

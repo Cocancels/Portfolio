@@ -4,8 +4,6 @@ import { Presentation } from "./Presentation/Presentation";
 import { Projets } from "./Projets/Projets";
 import { BubblesNav } from "./Bubbles-nav/BubblesNav";
 
-import logo from "./test.jpg";
-
 
 function App() {
   return (

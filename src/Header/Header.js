@@ -1,14 +1,11 @@
 import { Navbar } from "../Navbar/Navbar";
 import { Navlinks } from "../NavLinks/Navlinks";
-import { BubblesNav } from "../Bubbles-nav/BubblesNav"
 import "./Header.css";
 import {useInView} from 'react-intersection-observer'
-import React, { useState, useEffect, useRef } from "react";
-import InView from "react-intersection-observer";
+import React, { useState, useEffect } from "react";
 
 
 export function Header() {
-  const [leftTraitHeight, setLeftTraitHeight] = useState({ height: "0px" });
   const [title, setTitle] = useState("");
   const [subTitle, setSubTitle] = useState("");
   const [titleCaret, setTitleCaret] = useState("");
@@ -33,52 +30,33 @@ export function Header() {
     opacity: "0",
     transform: "translateY(50px)",
   });
-  const [pictureDisplay, setPictureDisplay] = useState({
-    display: "none",
-    opacity: "0",
-    transform: "translateY(-50px)",
-  });
   const [buttonDisplay, setButtonDisplay] = useState({
     display: "none",
     opacity: "0",
     transform: "translateY(50px)",
   });
 
-  const [linksDisplay, setLinksDisplay] = useState({
-    opacity: 0,
-    transform: "translateY(10px)",
-  });
-
-  const [buttonRotation, setButtonRotation] = useState({
-    transform: "rotate(0deg)",
-  });
-
   const [ref, inView] = useInView({
     threshold: 0,
-    delay: 1000
+    delay: 0
   });
 
   const [animationState, setAnimationState] = useState(false)
-
 
   let i = 0;
   let j = 0;
   let fullTitle = "Corentin Ancel";
   let fullSubTitle = "Développeur Web";
 
-  // window.onbeforeunload = function () {
-  //   window.scrollTo(0, 0);
-  // };
 
   useEffect(() => {
     if(inView){
       changeBubble()
       if(!animationState){
         setAnimationState(true)
-        setLeftTraitHeight({ height: "400px" });
         setTimeout(() => {
-        setTitleCaret("|");
-        showTitle();
+          setTitleCaret("|");
+          showTitle();
       }, 1000);
       }
     }
@@ -168,12 +146,6 @@ export function Header() {
   }
 
   function showPicture() {
-    setPictureDisplay({
-      display: "flex",
-      opacity: "0",
-      transform: "translateY(-50px)",
-    });
-
     setButtonDisplay({
       display: "block",
       opacity: "0",
@@ -181,12 +153,6 @@ export function Header() {
     });
 
     setTimeout(() => {
-      setPictureDisplay({
-        display: "flex",
-        opacity: "1",
-        transform: "translateY(0px)",
-      });
-
       setButtonDisplay({
         display: "block",
         opacity: "1",

@@ -1,13 +1,6 @@
 import "./BubblesNav.css";
-import React, { useState, useEffect, useRef } from "react";
-import {
-  Link,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller,
-} from "react-scroll";
+import React from "react";
+
 
 export function BubblesNav() {
   return (

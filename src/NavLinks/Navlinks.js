@@ -1,13 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./Navlinks.css";
-import { useInView } from "react-intersection-observer";
 import {
   Link,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller,
 } from "react-scroll";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
@@ -28,9 +22,10 @@ export function Navlinks(props) {
 
   const [isOn, setIsOn] = useState(false);
 
-  const allLinks = props.links.map((item) => {
+  const allLinks = props.links.map((item, i) => {
     return (
       <Link
+        key={i}
         activeClass="active"
         className="button-link"
         to={item.link}

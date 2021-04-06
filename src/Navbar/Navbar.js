@@ -1,14 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import "./Navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import {
   Link,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-  scroller,
 } from "react-scroll";
 
 export function Navbar() {
@@ -24,14 +19,12 @@ export function Navbar() {
     opacity: "1",
   });
 
-  const [responsiveDisplay, setResponsiveDisplay] = useState();
-
   const [navOn, setNavOn] = useState(false)
 
 
   function showNav() {
     if (window.innerWidth> 1024) {
-      if (navDisplay.display != "flex" && navDisplay.opacity != "1") {
+      if (navDisplay.display !== "flex" && navDisplay.opacity !== "1") {
         setNavHeight({ height: "80px" });
         setNavDisplay({ display: "flex", opacity: "0" });
         setBurgerDisplay({ display: "block", opacity: "0" });
@@ -47,7 +40,7 @@ export function Navbar() {
 
   function hideNav() {
     if (window.innerWidth >   1024) {
-      if (navDisplay.display != "none" && navDisplay.opacity != "0") {
+      if (navDisplay.display !== "none" && navDisplay.opacity !== "0") {
         setNavHeight({ height: "20px" });
         setNavDisplay({ display: "flex", opacity: "0" });
 

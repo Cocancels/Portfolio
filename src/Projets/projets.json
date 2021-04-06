@@ -1,33 +1,33 @@
 [
   {
+    "image": "./logos/logo-labellesgames.jpg",
+    "name": "Games For A Better World",
+    "description": "Projet réalisé dans le cadre d'une bourse à projet à l'IIM. Notre client, l'entreprise de jeux vidéos La Belle Game, nous a demandé de lui créér un site pour son association, à l'aide de Kirby CMS, un CMS peu connu qui permet au client d'ajouter et modifier ses projets lui-même, facilement.",
+    "languages": ["logo-kirby.svg", "php-logo.png", "logo-js.png"],
+    "link": "https://github.com/Cocancels/BAP_LaBelleGames"
+  },
+  {
     "image": "./screen-devcorp.jpg",
     "name": "Dev'corp",
-    "description": "Projet réalisé dans le cadre du projet de fin d'année à l'IIM. Nous étions en groupe de 5, et nous avons eu une année pour travailler sur ce site qui est un forum d entraide entre étudiants en développement au pôle Léonard de Vinci",
-     
-    "languages": ["logo-symfony.png", "logo-js.png"],
-    "link": "https://github.com/Cocancels/Devlab_S1"
-  },
-  {
-    "image": "./logos/logo-iim.png",
-    "name": "1",
-    "description": "Projet réalisé dans le cadre du projet de fin d'année à l'IIM.",
+    "description": "Projet réalisé dans le cadre du projet de fin d'année à l'IIM, pour lequel nous étions en groupe de 5. Nous avons eu une année pour travailler sur ce site qui est un forum d'entraide pour les étudiants du pôles Léonard de Vinci.",
+
     "languages": ["logo-symfony.png", "logo-js.png"],
     "link": "https://github.com/Cocancels/Devlab_S1"
   },
 
   {
-    "image": "./logos/logo-devlab.jpg",
-    "name": "2",
-    "description": "Projet réalisé dans le cadre du projet de fin d'année à l'IIM.",
-    "languages": ["logo-symfony.png", "logo-js.png"],
-    "link": "https://github.com/Cocancels/Devlab_S1"
+    "image": "./logos/logo-laravue.png",
+    "name": "Projet Laravue",
+    "description": "Projet réalisé pour le rendu du module Laravel-Vue à l'IIM. Nous étions par groupes de 2, et nous avons eu pour consigne de mêler Laravel à Vue à l'aide de Inertia pour créer un petit site de gestion d'entreprises/clients.",
+    "languages": ["logo-laravel.png", "logo-vue.png"],
+    "link": "https://github.com/Cocancels/Laravue-CRUD"
   },
 
   {
-    "image": "./profile_picture.jpg",
-    "name": "3",
-    "description": "b",
-    "languages": ["logo-symfony.png"],
-    "link": "d"
+    "image": "./logos/logo-porfolio.png",
+    "name": "Portfolio",
+    "description": "Le portfolio sur lequel vous êtes actuellement. Fait en React, c'est un des premiers gros projets personnels que je me suis imposé, pour acquérir de l'expérience et commencer à me mettre en valeur en temps que développeur",
+    "languages": ["logo-react.png", "logo-js.png"],
+    "link": "https://github.com/Cocancels/Portfolio"
   }
 ]

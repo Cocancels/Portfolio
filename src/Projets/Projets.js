@@ -12,59 +12,62 @@ import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 
 export function Projets() {
     const [i, setI] = useState(0);
-    const [leftTraitHeight, setLeftTraitHeight] = useState({ height: "0px" });
     const [projetContainerDisplay, setProjetContainerDisplay] = useState({display: "none", opacity: "0", transform: "translateY(-50px)", transition: "0"})
     const [projetDisplay, setProjetDisplay] = useState({opacity: "1", transform: "translateX(0)", transition:"0"})
     const [animationState, setAnimationState] = useState(false)  
     const [buttonDisplay, setButtonDisplay] = useState({display: "none", opacity: "0", transition: "0s"})
     const [ref, inView] = useInView({
       threshold: 0,
-      delay: 1000
+      delay: 0
     });
   
     const prevIRef = useRef();
     useEffect(() => {
+      function changeColor(){
+        if(prevIRef.current != null){
+          document.getElementById("buttonProject" + i).style.color = "#D5625D"
+          document.getElementById("buttonProject" + prevIRef.current).style.color= "white"
+        }
+      }
       changeColor()
       prevIRef.current = i;
     },[i]);
 
     useEffect(() => {
       if (inView) {
-        changeBubble()
-        setLeftTraitHeight({ height: "80%" });
+        changeBubble();;
         showProjectContainer();
       } else {
-        setLeftTraitHeight({ height: "0", transition: "0s" });
         setProjetContainerDisplay({
           display: "none",
           opacity: "0",
           transform: "translateY(-50px)",
           transition: "0s",
         });
-        setButtonDisplay({display: "none", opacity: "0"})
+        setButtonDisplay({ display: "none", opacity: "0" });
       }
     },[inView])
 
 
 
-    const allProjects = ProjetsList.map((project) => {
+    const allProjects = ProjetsList.map((project, i) => {
     return (
-      <div style={projetDisplay} class="projet-container" key={project}>
-        <img className="projet-image" src={project.image}></img>
-        <div class="projet-content">
-          <p class="projet-name">{project.name}</p>
-          <p class="projet-description">{project.description}</p>
+      <div key={i} style={projetDisplay} className="projet-container">
+        <img alt="projet" className="projet-image" src={project.image}></img>
+        <div className="projet-content">
+          <p className="projet-name">{project.name}</p>
+          <p className="projet-description">{project.description}</p>
           <div id="flex-container-projet">
-            <div class="projet-languages">
+            <div className="projet-languages">
                 <div className="projet-languages-logos">
-                {project.languages.map((element) => {
+                {project.languages.map((element, i) => {
                     return(
-                        <img className="language-logo" src={"./logos/" + element}></img>
+                        <img key={i} alt="langage" className="language-logo" src={"./logos/" + element}></img>
                     )
                 })}
                 </div>
             </div>
-            <a href={project.link} class="projet-link">
+            <a href={project.link} className="projet-link">
                 <FontAwesomeIcon id="arrow-right-projet"  icon={faArrowCircleRight} />
             </a>
           </div>
@@ -73,9 +76,9 @@ export function Projets() {
     )
   });
 
-  const divNumber = ProjetsList.map((idProject) => {
+  const divNumber = ProjetsList.map((idProject, i) => {
     return (
-      <div onClick={() => goToProject(ProjetsList.indexOf(idProject))} value={ProjetsList.indexOf(idProject)} class="buttonProject" id={"buttonProject" + ProjetsList.indexOf(idProject)}>
+      <div key={i} onClick={() => goToProject(ProjetsList.indexOf(idProject))} value={ProjetsList.indexOf(idProject)} className="buttonProject" id={"buttonProject" + ProjetsList.indexOf(idProject)}>
           <FontAwesomeIcon icon={faCircle} />
       </div>
     )
@@ -120,12 +123,7 @@ export function Projets() {
     }
   }
 
-  function changeColor(){
-    if(prevIRef.current != null){
-      document.getElementById("buttonProject" + i).style.color = "#D5625D"
-      document.getElementById("buttonProject" + prevIRef.current).style.color= "white"
-    }
-  }
+
 
   function fadeAnimation(sign){
     if(sign === "minus"){
@@ -199,7 +197,7 @@ export function Projets() {
           <div className="projets-title">
               <h1 style={projetContainerDisplay}>Mes projets</h1>
           </div>
-          <div style={projetContainerDisplay} class="allProjets">
+          <div style={projetContainerDisplay} className="allProjets">
             {allProjects[i]}
           </div>
           <div style={projetContainerDisplay} id="buttons-project-container">
