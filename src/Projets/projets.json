@@ -16,7 +16,7 @@
   },
 
   {
-    "image": "./logos/logo-laravue.png",
+    "image": "./logos/logo-laravue.jpg",
     "name": "Projet Laravue",
     "description": "Projet réalisé pour le rendu du module Laravel-Vue à l'IIM. Nous étions par groupes de 2, et nous avons eu pour consigne de mêler Laravel à Vue à l'aide de Inertia pour créer un petit site de gestion d'entreprises/clients.",
     "languages": ["logo-laravel.png", "logo-vue.png"],
@@ -24,7 +24,7 @@
   },
 
   {
-    "image": "./logos/logo-porfolio.png",
+    "image": "./logos/logo-porfolio.jpg",
     "name": "Portfolio",
     "description": "Le portfolio sur lequel vous êtes actuellement. Fait en React, c'est un des premiers gros projets personnels que je me suis imposé, pour acquérir de l'expérience et commencer à me mettre en valeur en temps que développeur",
     "languages": ["logo-react.png", "logo-js.png"],
