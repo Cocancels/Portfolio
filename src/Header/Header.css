@@ -21,6 +21,11 @@ header{
     display: flex;
 }
 
+.curri{
+    font-size: 50px;
+    color:#EC6D53 ;
+}
+
 
 #intro-content{
     align-self: center;
@@ -107,15 +112,6 @@ header{
 
 #icon:hover{
     cursor: pointer;
-}
-
-.cv{
-    border-radius: 50%;
-    background-color: orange;
-    border: none;
-    color: black;
-    font-weight: bold;
-    font-size: 20px;
 }
 
 .button-link:hover{

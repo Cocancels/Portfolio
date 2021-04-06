@@ -3,6 +3,9 @@ import { Navlinks } from "../NavLinks/Navlinks";
 import "./Header.css";
 import {useInView} from 'react-intersection-observer'
 import React, { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFileDownload } from "@fortawesome/free-solid-svg-icons";
+
 
 
 export function Header() {
@@ -191,27 +194,39 @@ export function Header() {
                 </h2>
               </div>
               <div id="intro-logos">
-                <img
-                  style={icon1Display}
-                  src="./logos/logo_github.svg"
-                  alt="logo"
-                  className="logo github"
-                />
-                <img
-                  style={icon2Display}
-                  src="./logos/logo_linkedin.svg"
-                  alt="logo"
-                  className="logo linkedin"
-                />
-                <img
-                  style={icon3Display}
-                  src="./logos/logo_gmail.svg"
-                  alt="logo"
-                  className="logo gmail"
-                />
-                <button style={icon4Display} className="logo cv">
-                  CV
-                </button>
+                <a href="https://github.com/Cocancels">
+                    <img
+                      style={icon1Display}
+                      src="./logos/logo_github.svg"
+                      alt="logo"
+                      className="logo github"
+                    />
+                </a>
+                <a href="https://www.linkedin.com/in/corentin-ancel-1b4360195/">
+                  <img
+                    style={icon2Display}
+                    src="./logos/logo_linkedin.svg"
+                    alt="logo"
+                    className="logo linkedin"
+                  />
+                </a>
+                <a href="mailto:corentinancel@gmail.com">
+                  <img
+                    style={icon3Display}
+                    src="./logos/logo_gmail.svg"
+                    alt="logo"
+                    className="logo gmail"
+                  />
+                </a>
+
+                <a href="./Corentin_Ancel_CV.pdf" className="cv" download>
+                <FontAwesomeIcon  icon={faFileDownload}
+                      style={icon4Display}
+                      src="./logos/logo.png"
+                      alt="logo"
+                      className="logo curri"
+                    />
+                </a>
               </div>
             </div>
           </div>
