@@ -26,7 +26,7 @@ export function Presentation() {
 
   const [ref, inView] = useInView({
     threshold: 0,
-    delay: 0,
+    delay: 200,
   });
 
   const allCompetences = listeCompetences.map((competence, i) => {
