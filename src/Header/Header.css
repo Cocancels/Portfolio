@@ -126,7 +126,14 @@ header{
     .nav-logo{
         display: none !important;
     }
-    
+
+    #presentation-content{
+        overflow-y: scroll;
+    }
+
+    .curri{
+        font-size: 35px;
+    }
     
     .header-presentation{
         padding-top: 200px;
