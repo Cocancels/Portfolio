@@ -12,7 +12,6 @@ export function BubblesNav() {
         activeClass="active"
         className="button-link"
         to="header-container"
-        spy={true}
         smooth={true}
         duration={1000}
       >
@@ -23,17 +22,16 @@ export function BubblesNav() {
         activeClass="active"
         className="button-link"
         to="presentation"
-        spy={true}
         smooth={true}
         duration={1000}
       >
         <div className="bubble" id="bubble-presentation"></div>
       </Link>
+
       <Link
         activeClass="active"
         className="button-link"
-        to="projets"
-        spy={true}
+        to="projets-container"
         smooth={true}
         duration={1000}
       >

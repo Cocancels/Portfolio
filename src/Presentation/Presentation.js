@@ -53,7 +53,11 @@ export function Presentation() {
   }, [inView]);
 
   function presentationAnimation() {
-    setPresentationTraitHeight({ height: "300px", transition: "1s" });
+    if (window.innerWidth > 1023 && window.innerWidth < 1500) {
+      setPresentationTraitHeight({ height: "400px", transition: "1s" });
+    } else {
+      setPresentationTraitHeight({ height: "300px", transition: "1s" });
+    }
     setPresentationContent({
       display: "block",
       opacity: "0",
@@ -113,20 +117,6 @@ export function Presentation() {
           <div className="competences-logos">{allCompetences}</div>
         </div>
       </div>
-      {/* <div className="navlinks-presentation" style={buttonDisplay}>
-        <Navlinks
-          links={[
-            {
-              link: "header-presentation",
-              name: "Accueil",
-            },
-            {
-              link: "projets",
-              name: "Projets",
-            },
-          ]}
-        />
-      </div> */}
     </div>
   );
 }

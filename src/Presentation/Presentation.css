@@ -3,7 +3,6 @@
     margin-bottom: 10px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
 }
 
 .navlinks-presentation{
@@ -101,6 +100,7 @@
 
 #competences-container{
     display: flex;
+    margin-top: 100px;
 }
 
 .competences-logos{
@@ -267,21 +267,5 @@
 @media (max-height: 600px) {
     .presentation *{
         overflow-y: scroll;
-    }
-}
-
-@media (max-width:2000px) and (min-width:1400px){
-    #presentation-content>h1, .competences-content>h1{
-        font-size: 40px;
-    }
-
-    #presentation-content>p{
-        font-size: 20px;
-        line-height: 35px;
-        margin-top: 40px;
-    }
-
-    .logo-competence>img{
-        width: 75px
     }
 }

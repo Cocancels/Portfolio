@@ -195,12 +195,12 @@ export function Header() {
               </div>
               <div id="intro-logos">
                 <a href="https://github.com/Cocancels">
-                    <img
-                      style={icon1Display}
-                      src="./logos/logo_github.svg"
-                      alt="logo"
-                      className="logo github"
-                    />
+                  <img
+                    style={icon1Display}
+                    src="./logos/logo_github.svg"
+                    alt="logo"
+                    className="logo github"
+                  />
                 </a>
                 <a href="https://www.linkedin.com/in/corentin-ancel-1b4360195/">
                   <img
@@ -220,31 +220,18 @@ export function Header() {
                 </a>
 
                 <a href="./Corentin_Ancel_CV.pdf" className="cv" download>
-                <FontAwesomeIcon  icon={faFileDownload}
-                      style={icon4Display}
-                      src="./logos/logo.png"
-                      alt="logo"
-                      className="logo curri"
-                    />
+                  <FontAwesomeIcon
+                    icon={faFileDownload}
+                    style={icon4Display}
+                    src="./logos/logo.png"
+                    alt="logo"
+                    className="logo curri"
+                  />
                 </a>
               </div>
             </div>
           </div>
         </div>
-        {/* <div className="navlinks-header" style={buttonDisplay}>
-          <Navlinks
-            links={[
-              {
-                link: "presentation",
-                name: "A propos",
-              },
-              {
-                link: "projets",
-                name: "Projets",
-              },
-            ]}
-          />
-        </div> */}
       </div>
     </header>
   );

@@ -195,7 +195,7 @@ export function Projets() {
       <div className="section-projets-container">
         <div className="projets-container">
           <div className="projets-title">
-              <h1 style={projetContainerDisplay}>Mes projets</h1>
+            <h1 style={projetContainerDisplay}>Mes projets</h1>
           </div>
           <div style={projetContainerDisplay} className="allProjets">
             {allProjects[i]}
@@ -211,20 +211,6 @@ export function Projets() {
             </button>
           </div>
         </div>
-        {/* <div className="navlinks-projets" style={buttonDisplay}>
-          <Navlinks
-            links={[
-              {
-                link: "header-presentation",
-                name: "Accueil",
-              },
-              {
-                link: "presentation",
-                name: "Présentation",
-              },
-            ]}
-          />
-        </div> */}
       </div>
     </div>
   );
