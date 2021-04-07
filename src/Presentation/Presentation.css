@@ -239,33 +239,58 @@
     }
 }
 
-@media (width: 1024px) and (max-height: 1366px) {
+/* @media (min-width: 1024px) and (max-height: 1366px) {
     #presentation-content>h1, .competences-content>h1{
-        font-size: 72px;
+        font-size: 40px;
     }
 
     #presentation-content>p{
-        font-size: 30px;
-        line-height: 40px;
+        font-size: 16px;
+        line-height: 30px;
+    }
+
+    #presentation-container{
+        padding-top: 100px;
     }
 
 
-    .logo-competence>img{
-        width: 90px;
-        margin-right: 75px;
+    #competences-container{
         margin-top: 50px;
     }
-}
 
-@media (max-height: 700px) {
-    #presentation-content>p{
-        line-height: 20px;
-        font-size: 13px;
+    .logo-competence>img{
+        width: 50px
     }
-}
+} */
+
 
 @media (max-height: 600px) {
     .presentation *{
         overflow-y: scroll;
     }
+}
+
+@media screen and  (min-width: 1366px )and (max-width: 1919px){
+   #presentation-content>h1, .competences-content>h1{
+       font-size: 40px;
+   }
+
+   #presentation-content>p{
+       font-size: 20px;
+       line-height: 35px;
+       margin-top: 25px
+   }
+
+   #competences-container{
+       margin-top: 50px;
+   }
+
+   .competences-logos{
+       margin-top: 10px;
+   }
+
+   .logo-competence>img{
+       width: 70px;
+       margin-top: 25px;
+   }
 }

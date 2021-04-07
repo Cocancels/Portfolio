@@ -59,16 +59,15 @@ export function Presentation() {
   }, [inView]);
 
   function presentationAnimation() {
-    if (window.innerWidth > 1023 && window.innerWidth < 1500) {
-      console.log("oui ca marche");
-      setPresentationTraitHeight({ height: "450px", transition: "1s" });
-      setCompetenceTraitHeight({ height: "400px", transition: "1s" });
-    } else if (window.innerWidth < 640) {
+    if (window.innerWidth >= 1024 && window.innerWidth < 1366) {
       setPresentationTraitHeight({ height: "200px", transition: "1s" });
       setCompetenceTraitHeight({ height: "200px", transition: "1s" });
+    } else if (window.innerWidth >= 1366 && window.innerWidth < 1920) {
+      setPresentationTraitHeight({ height: "250px", transition: "1s" });
+      setCompetenceTraitHeight({ height: "250px", transition: "1s" });
     } else {
-      setPresentationTraitHeight({ height: "350px", transition: "1s" });
-      setCompetenceTraitHeight({ height: "300px", transition: "1s" });
+      setPresentationTraitHeight({ height: "250px", transition: "1s" });
+      setCompetenceTraitHeight({ height: "250px", transition: "1s" });
     }
     setPresentationContent({
       display: "block",

@@ -368,3 +368,56 @@
         font-size: 30px;
     }
 }
+
+@media screen and  (min-width: 1024px )and (max-width: 1366px){
+    .projets-title>h1{
+        font-size: 40px;
+        padding-top: 100px;
+    }
+
+    .projet-image{
+        height: 125px;
+    }
+
+    .projet-container{
+        height: auto;
+        flex-direction: column;
+    }
+
+    .projet-name{
+        font-size: 25px;
+    }
+
+    .projet-description{
+        font-size: 14px;
+    }
+
+    .language-logo{
+        height: 40px;
+    }
+
+    .allProjets{
+        margin-top: 25px;
+    }
+}
+
+
+@media screen and  (min-width: 1367px )and (max-width: 1919px){
+    .projets-title>h1{
+        font-size: 40px;
+        padding-top: 100px;
+    }
+
+    .projet-image{
+        height: 350px;
+    }
+
+    .projet-name{
+        font-size: 25px;
+    }
+
+    .projet-description{
+        font-size: 17px;
+    }
+}
+

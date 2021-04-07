@@ -213,3 +213,47 @@ header{
           margin-bottom: 50px;
       }
   }
+
+
+  @media screen and  (min-width: 1024px )and (max-width: 1366px){
+    .header-presentation{
+        padding-top: 100px;
+    }
+
+    #intro-content{
+        width: 100%;
+    }
+
+    #intro-text>h1{
+        font-size: 80px;
+    }
+    
+    #profile-picture{
+        align-self: center;
+        margin: 0;
+    }
+
+    .navlinks-header{
+        margin-bottom: 50px;
+    }
+}
+
+
+
+  @media screen and  (min-width: 1366px )and (max-width: 1919px){
+    #intro-text>h1{
+        font-size: 100px;
+    }
+    
+    #profile-picture{
+        align-self: center;
+        margin: 0;
+    }
+
+    .navlinks-header{
+        margin-bottom: 50px;
+    }
+}
+
+
+

@@ -46,3 +46,17 @@
     }
     
 }
+
+@media  (min-width: 1024px) and (max-width: 1366px){
+    .bubbles{
+        right: 10px;
+    }
+
+    .bubbles div{
+        width: 20px;
+        height: 20px;
+        margin-top: 30px;
+        border: solid 2px #EC6D53;
+    }
+    
+}
