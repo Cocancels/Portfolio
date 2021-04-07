@@ -9,6 +9,10 @@ export function Presentation() {
     height: "0px",
   });
 
+  const [competenceTraitHeight, setCompetenceTraitHeight] = useState({
+    height: "0px",
+  });
+
   const [presentationContent, setPresentationContent] = useState({
     display: "none",
     opacity: "0",
@@ -39,6 +43,8 @@ export function Presentation() {
       changeBubble();
     } else {
       setPresentationTraitHeight({ height: "0px", transition: "0s" });
+      setCompetenceTraitHeight({ height: "0px", transition: "0s" });
+
       setPresentationContent({
         display: "none",
         opacity: "0",
@@ -54,9 +60,15 @@ export function Presentation() {
 
   function presentationAnimation() {
     if (window.innerWidth > 1023 && window.innerWidth < 1500) {
-      setPresentationTraitHeight({ height: "400px", transition: "1s" });
+      console.log("oui ca marche");
+      setPresentationTraitHeight({ height: "450px", transition: "1s" });
+      setCompetenceTraitHeight({ height: "400px", transition: "1s" });
+    } else if (window.innerWidth < 640) {
+      setPresentationTraitHeight({ height: "200px", transition: "1s" });
+      setCompetenceTraitHeight({ height: "200px", transition: "1s" });
     } else {
-      setPresentationTraitHeight({ height: "300px", transition: "1s" });
+      setPresentationTraitHeight({ height: "350px", transition: "1s" });
+      setCompetenceTraitHeight({ height: "300px", transition: "1s" });
     }
     setPresentationContent({
       display: "block",
@@ -108,10 +120,7 @@ export function Presentation() {
         </div>
       </div>
       <div id="competences-container">
-        <div
-          style={presentationTraitHeight}
-          className="presentation-trait"
-        ></div>
+        <div style={competenceTraitHeight} className="presentation-trait"></div>
         <div className="competences-content" style={presentationContent}>
           <h1>Compétences</h1>
           <div className="competences-logos">{allCompetences}</div>
