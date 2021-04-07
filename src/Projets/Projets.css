@@ -369,3 +369,23 @@
         font-size: 30px;
     }
 }
+
+
+@media (max-width:1600px){
+    .projets-title>h1{
+        font-size: 50px;
+    }
+
+    .projet-image{
+        height: 350px;
+        max-width: 500px;
+    }
+    
+    .projet-name{
+        font-size: 25px;
+    }
+
+    .projet-description{
+        font-size: 15px;
+    }
+}

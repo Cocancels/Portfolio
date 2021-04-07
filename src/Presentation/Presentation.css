@@ -269,3 +269,19 @@
         overflow-y: scroll;
     }
 }
+
+@media (max-width:1600px){
+    #presentation-content>h1, .competences-content>h1{
+        font-size: 40px;
+    }
+
+    #presentation-content>p{
+        font-size: 20px;
+        line-height: 35px;
+        margin-top: 40px;
+    }
+
+    .logo-competence>img{
+        width: 75px
+    }
+}

@@ -26,7 +26,7 @@
   {
     "image": "./logos/logo-porfolio.jpg",
     "name": "Portfolio",
-    "description": "Le portfolio sur lequel vous êtes actuellement. Fait en React, c'est un des premiers gros projets personnels que je me suis imposé, pour acquérir de l'expérience et commencer à me mettre en valeur en temps que développeur",
+    "description": "Le portfolio sur lequel vous êtes actuellement. Fait en React, c'est un des premiers gros projets personnels que je me suis imposé, pour acquérir de l'expérience et commencer à me mettre en valeur en temps que développeur.",
     "languages": ["logo-react.png", "logo-js.png"],
     "link": "https://github.com/Cocancels/Portfolio"
   }

@@ -213,3 +213,14 @@ header{
           margin-bottom: 50px;
       }
   }
+
+  @media (max-width:1600px){
+    .header-presentation{
+        padding-top: 150px;
+    }
+
+    #intro-text>h1{
+        font-size: 100px;
+    }
+
+  }
