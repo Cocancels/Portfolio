@@ -211,7 +211,7 @@ export function Projets() {
             </button>
           </div>
         </div>
-        <div className="navlinks-projets" style={buttonDisplay}>
+        {/* <div className="navlinks-projets" style={buttonDisplay}>
           <Navlinks
             links={[
               {
@@ -224,7 +224,7 @@ export function Projets() {
               },
             ]}
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );

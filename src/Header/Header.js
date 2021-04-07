@@ -231,7 +231,7 @@ export function Header() {
             </div>
           </div>
         </div>
-        <div className="navlinks-header" style={buttonDisplay}>
+        {/* <div className="navlinks-header" style={buttonDisplay}>
           <Navlinks
             links={[
               {
@@ -244,7 +244,7 @@ export function Header() {
               },
             ]}
           />
-        </div>
+        </div> */}
       </div>
     </header>
   );

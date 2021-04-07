@@ -8,10 +8,10 @@ import {
 export function BubblesNav() {
   return (
     <div className="bubbles">
-       <Link
+      <Link
         activeClass="active"
         className="button-link"
-        to="header"
+        to="header-container"
         spy={true}
         smooth={true}
         duration={1000}

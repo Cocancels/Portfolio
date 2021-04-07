@@ -270,7 +270,7 @@
     }
 }
 
-@media (max-width:1600px){
+@media (max-width:2000px) and (min-width:1400px){
     #presentation-content>h1, .competences-content>h1{
         font-size: 40px;
     }

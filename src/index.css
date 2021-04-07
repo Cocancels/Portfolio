@@ -5,9 +5,14 @@
   padding: 0;
   margin: 0;
   font-family: 'Montserrat', sans-serif;
+  
 }
 
 body{
+  overflow-y: hidden;
+}
+
+body>*{
   overflow: hidden;
 }
 
@@ -19,7 +24,6 @@ body{
 
 @media  (max-width: 640px){
   body{
-    overflow: initial;
     overflow-x: hidden;
   }
 }

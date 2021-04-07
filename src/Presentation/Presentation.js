@@ -113,7 +113,7 @@ export function Presentation() {
           <div className="competences-logos">{allCompetences}</div>
         </div>
       </div>
-      <div className="navlinks-presentation" style={buttonDisplay}>
+      {/* <div className="navlinks-presentation" style={buttonDisplay}>
         <Navlinks
           links={[
             {
@@ -126,7 +126,7 @@ export function Presentation() {
             },
           ]}
         />
-      </div>
+      </div> */}
     </div>
   );
 }
