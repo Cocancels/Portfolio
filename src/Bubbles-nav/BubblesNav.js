@@ -31,7 +31,7 @@ export function BubblesNav() {
       <Link
         activeClass="active"
         className="button-link"
-        to="projets-container"
+        to="projets"
         smooth={true}
         duration={1000}
       >
