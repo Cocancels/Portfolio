@@ -41,7 +41,7 @@ export function Header() {
 
   const [ref, inView] = useInView({
     threshold: 0,
-    delay: 0
+    delay: 0,
   });
 
   const [animationState, setAnimationState] = useState(false)

@@ -18,7 +18,7 @@ export function Projets() {
     const [buttonDisplay, setButtonDisplay] = useState({display: "none", opacity: "0", transition: "0s"})
     const [ref, inView] = useInView({
       threshold: 0,
-      delay: 0
+      delay: 0,
     });
   
     const prevIRef = useRef();
@@ -35,7 +35,7 @@ export function Projets() {
 
     useEffect(() => {
       if (inView) {
-        changeBubble();;
+        changeBubble();
         showProjectContainer();
       } else {
         setProjetContainerDisplay({
@@ -86,7 +86,12 @@ export function Projets() {
 
   function showProjectContainer(){
     setButtonDisplay({display: "block", opacity: "0", transition: "1s"})
-    setProjetContainerDisplay({display: "flex", opacity: "0", transform:"translateY(-50px)", transition:"0"})
+    setProjetContainerDisplay({
+      display: "flex",
+      opacity: "0",
+      transform: "translateY(-50px)",
+      transition: "1s",
+    });
     setTimeout(() => {
       setButtonDisplay({display: "block", opacity: "1", transition: "1s"})
       setProjetContainerDisplay({display: "flex", opacity: "1", transform:"translateY(0px)", transition: "1s"})
