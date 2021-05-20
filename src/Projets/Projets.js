@@ -8,7 +8,6 @@ import { faArrowCircleRight } from "@fortawesome/free-solid-svg-icons";
 import { faCircle } from "@fortawesome/free-solid-svg-icons";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
-// CTS{A573FD4VZFE}
 
 
 export function Projets() {
