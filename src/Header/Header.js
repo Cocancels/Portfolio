@@ -1,12 +1,10 @@
 import { Navbar } from "../Navbar/Navbar";
 import { Navlinks } from "../NavLinks/Navlinks";
 import "./Header.css";
-import {useInView} from 'react-intersection-observer'
+import { useInView } from "react-intersection-observer";
 import React, { useState, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faFileDownload } from "@fortawesome/free-solid-svg-icons";
-
-
 
 export function Header() {
   const [title, setTitle] = useState("");
@@ -44,23 +42,22 @@ export function Header() {
     delay: 0,
   });
 
-  const [animationState, setAnimationState] = useState(false)
+  const [animationState, setAnimationState] = useState(false);
 
   let i = 0;
   let j = 0;
   let fullTitle = "Corentin Ancel";
   let fullSubTitle = "Développeur Web";
 
-
   useEffect(() => {
-    if(inView){
-      changeBubble()
-      if(!animationState){
-        setAnimationState(true)
+    if (inView) {
+      changeBubble();
+      if (!animationState) {
+        setAnimationState(true);
         setTimeout(() => {
           setTitleCaret("|");
           showTitle();
-      }, 1000);
+        }, 1000);
       }
     }
   }, [inView]);
@@ -165,16 +162,13 @@ export function Header() {
     }, 100);
   }
 
-
   function changeBubble() {
     var bubbles = document.getElementsByClassName("bubble");
     for (var i = 0; i < bubbles.length; i++) {
       bubbles[i].style.backgroundColor = "#0E0E0E";
     }
-    document.getElementById("bubble-header").style.backgroundColor =
-      "#EC6D53";
+    document.getElementById("bubble-header").style.backgroundColor = "#EC6D53";
   }
-
 
   return (
     <header ref={ref}>
@@ -219,7 +213,7 @@ export function Header() {
                   />
                 </a>
 
-                <a href="./Corentin_Ancel_CV.pdf" className="cv" download>
+                <a href="./Corentin_Ancel_CV_2022.pdf" className="cv" download>
                   <FontAwesomeIcon
                     icon={faFileDownload}
                     style={icon4Display}
